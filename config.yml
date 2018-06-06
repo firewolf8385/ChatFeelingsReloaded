@@ -1,0 +1,347 @@
+#------------------------------------------------------------------------
+#------------------------------------------------------------------------
+#------------------------- ChatFeelingsReloaded -------------------------
+#------------------------------------------------------------------------
+#------------------------------------------------------------------------
+
+# This is used when an update modifies the config. If checks this value and
+#warns you when the config file does not match the version needed. This number
+# may be changed when the correct additions to the config are made.
+
+ConfigVersion: 1
+
+
+
+#------------------------------------------------------------------------
+# Theme
+#------------------------------------------------------------------------
+
+# These allow you to modify the colors of the plugin, each are named by
+# what they are by default
+
+# Modifies the dividing lines: "---------------------"
+Grey: "&8&l"
+
+# Modifies the help page headers: "Actions" and "Feelings"
+GoldOne: "&6&l"
+
+# Modifies the command colors of the bottom of the help pages: "/actions 1"
+GoldTwo: "&6"
+
+# Modifies the page number at the top of the help pages: "[1/7]"
+Yellow:  "&e"
+
+# Modifies the bottom of the help pages: "Do [command] for the next page."
+LightGrey: "&7"
+
+
+#------------------------------------------------------------------------
+# Prefixes
+#------------------------------------------------------------------------
+
+# This changes the prefixes of the messages for actions and feelings
+# For example, "[#] player is feeling calm."
+
+Action-Prefix: "&7&l[&6&l*&7&l]&r "
+
+Feelings-Prefix: "&7&l[&6&l*&7&l]&r "
+
+
+#------------------------------------------------------------------------
+# Messages
+#------------------------------------------------------------------------
+
+#------------------------------------------------
+# Miscellaneous Messages ------------------------
+#------------------------------------------------
+
+#Default: &cYou do not have access to that command
+NoPermission: "&cYou do not have access to that command"
+
+#Default: &cChatFeelingsReloaded has been disabled!
+PluginDisabled: "&cChatFeelingsReloaded has been disabled"
+
+#Default: &6&lCFR &8> &cConfig is outdated! New features will not work until this is corrected.
+OutdatedConfig: "&6&lCFR &8> &cConfig is outdated! New features will not work until this is corrected."
+
+#Default: &cUsage: %command% [player]
+ActionUsage: "&cUsage: %command% [player]"
+
+
+#------------------------------------------------
+# Actions Help Pages-----------------------------
+#------------------------------------------------
+
+Bite-Help: "&6/bite &8- &fBites a player, OUCH!"
+
+Blush-Help: "&6/blush &8- &fTurns your face red, how embarrassing!"
+
+Boi-Help: "&6/boi &8- &fHere comes dat boi!"
+
+Cringe-Help: "&6/cringe &8- &fCringe at those who deserve it"
+
+Cry-Help: "&6/cry &8- &fCray at a player, how sad."
+
+Dab-Help: "&6/dab &8- &fWarning, this will make you cool"
+
+Fight-Help: "&6/fight &8- &fPrepare yourself for a fight"
+
+Hide-Help: "&6/hide &8- &fDuck behind a rock"
+
+Highfive-Help: "&6/highfive &8- &fShows your support and highfives a player!"
+
+Hug-Help: "&6/hug &8- &fGives somebody a nice warm hug!"
+
+Kiss-Help: "&6/kiss &8- &fGives a player a squishy kiss!"
+
+Lick-Help: "&6/lick &8- &fLick someone like an icecream sundae."
+
+Love-Help: "&6/love &8- &fGives someone lots of love!"
+
+Murder-Help: "&6/murder &8- &fMurders a player, Muhaha!"
+
+Poke-Help: "&6/poke &8- &fPoke someone to get their attention!"
+
+Punch-Help: "&6/punch &8- &fPunches a player, ouch!"
+
+Shake-Help: "&6/shake &8- &fShakes a player to their feet."
+
+Shoes-Help: "&6/shoes  &8- &fWhat 'r those!?!?"
+
+Sing-Help: "&6/sing &8- &fSing to the world!"
+
+Slap-Help: "&6/slap &8- &f Gives someone a piece of yuor mind!"
+
+Sleep-Help: "&6/sleep &8- &fZzzzzzzzzzzzzz"
+
+Snuggle-Help: "&6/snuggle &8- &fSnuggles a player with hugs."
+
+Spell-Help: "&6/spell &8- &fCast a magical spell on someone!"
+
+Stab-Help: "&6/stab &8- &fStabs a player, need a bandaid?"
+
+Stalk-Help: "&6/stalk &8- &fStare at a player O-O"
+
+Wave-Help: "&6/wave &8- &fWave at a player."
+
+Whisper-Help: "&6/whisper &8- &fWhisper into someone's ear."
+
+Wink-Help: "&6/wink &8- &f Wink at a player ;)"
+
+Yell-Help: "&6/yell &8- &f Yells at a player, inside voices please."
+
+
+#------------------------------------------------
+# Feelings Help Pages----------------------------
+#------------------------------------------------
+
+Afraid-Help: "&6/afraid &8- &fTell everyone you are feeling afraid"
+
+Angry-Help: "&6/angry &8- &fTell everyone you are feeling angry"
+
+Annoyed-Help: "&6/annoyed &8- &fTell everyone you are feeling annoyed"
+
+Bored-Help: "&6/bored &8- &fTell everyone you are feeling bored"
+
+Calm-Help: "&6/calm &8- &fTell everyone you are feeling calm"
+
+Confused-Help: "&6/confused &8- &fTell everyone you are feeling confused"
+
+Crazy-Help: "&6/crazy &8- &fTell everyone you are feeling crazy"
+
+Excited-Help: "&6/excited &8- &fTell everyone you are feeling excited"
+
+Guilty-Help: "&6/guilty &8- &fTell everyone you are feeling jealous"
+
+Happy-Help: "&6/happy &8- &fTell everyone you are feeling happy"
+
+Jealous-Help: "&6/jealous &8- &fTell everyone you are feeling jealous"
+
+Jolly-Help: "&6/jolly &8- &fTell everyone you are feeling Jolly"
+
+Lonely-Help: "&6/lonely &8- &fTell everyone you are feeling lonely"
+
+Loved-Help: "&6/loved &8- &fTell everyone you are feeling loved"
+
+Nervous-Help: "&6/nervous &8- &fTell everyone you are feeling nervous"
+
+Sad-Help: "&6/sad &8- &fTell everyone you are feeling sad"
+
+Scared-Help: "&6/scared &8- &fTell everyone you are feeling shy"
+
+Shy-Help: "&6/shy &8- &fTell everyone you are feelng shy"
+
+Worried-Help: "&6/worried &8- &fTell everyone you are feeling worried"
+
+
+#------------------------------------------------
+# Actions Chat Messages--------------------------
+#------------------------------------------------
+
+#Placeholders
+# %sender% - shows the senders username
+# %s-display% - shows the senders display name
+# %target% - shows the target's
+# %t-display% - show the targets display name
+
+bite:
+  sender: "&7You sink your teeth into &6%target%&7's skin."
+  target: "&6%sender% &7sinks their teeth into your skin."
+
+blush:
+  sender: "&7Your face turns bright pink in front of &6%target%&7. &ccx"
+  target: "&6%sender%&7's face turns bright pink in front of you. &ccx"
+
+boi:
+  sender: "&7You inhale to &6%target%&7... &eBOI"
+  target: "&6%target% &7inhales to you... &eBOI"
+
+cringe:
+  sender: "&7You cringe at &6%target%&7's actions."
+  target: "&6%sender% &7cringes at your actions."
+
+cry:
+  sender: "&7You shed a tear towards &6%target%"
+  target: "&6%sender% &7sheds a tear towards you."
+
+dab:
+  sender: "&7You freshly dab on &6%target%&7... Nailed it."
+  target: "&6%sender% &7freshly dabs on you..."
+
+fight:
+  sender: "&7You get ready to fight &6%target%&7."
+  target: "&6%sender% &7gets ready to fight you."
+
+hide:
+  sender: "&7You duck behind a rock to hide from &6%target%&7."
+  target: "&6%sender% &7hides from you."
+
+highfive:
+  sender: "&7You give a might highfive to &6%target%&7."
+  target: "&6%sender% &7gives you a might highfive."
+
+hug:
+  sender: "&7You give &6%target% &7a warm hug. &cAwww ❤"
+  target: "&6%sender% &7gives you a warm hug. &cAwww ❤"
+
+kiss:
+  sender: "&7You give &6%target%&7 a kiss. &cAwww ❤"
+  target: "&6%sender% &7gives you a kiss. &cAwww ❤"
+
+lick:
+  sender: "&7You lick &6%target% + &7like icecream... &3Gross!"
+  target: "&6%sender% &7licks you like icecream... &3Gross!"
+
+love:
+  sender: "&7You send &6%target% &7lots of love. &c❤"
+  target: "&6%sender% &7sends you lots of love. &c❤"
+
+murder:
+  sender: "&7You murder &6%target%&7. Bandaid anyone?"
+  target: "&6%sender% &7just murdered you. Bandaid anyone?"
+
+poke:
+  sender: "&7You poke &6%target% &7... Maybe they're on vacation?"
+  target: "&6%sender% &7has poked you! Anyone there?"
+
+punch:
+  sender: "&7You strike &6%target% &7with a punch, Ouch!"
+  target: "&6%sender% &7strikes you with a punch, Ouch!"
+
+shake:
+  sender: "&7You harlem shake &6%target%  &7's entire body."
+  target: "&6%sender% &7harlem shakes your entire body."
+
+shoes:
+  sender: "&7You yell to &6%target%&7, WHAT ARE THOOOOOSE?"
+  target: "&6%sender% &7yells to you, WHAT ARE THOOOOOSE?"
+
+sing:
+  sender: "&7You serenade &6%target% &7with your beautiful voice."
+  target: "&6%sender% &7serenades you with their beautiful voice."
+
+slap:
+  sender: "&7You slap &6%target% &7with some Spaghetti."
+  target: "&6%sender% &7slaps you with some Spahgetti."
+
+sleep:
+  sender: "&7You fall asleep infront of &6%target%&7. Zzzzzzz."
+  target: "&6%sender% &7falls asleep infront of you. Zzzzzzz."
+
+snuggle:
+  sender: "&7You snuggle &6%target% &7with love. &cAwww ❤"
+  target: "&6%sender% &7snuggles you with love. &cAwww ❤"
+
+spell:
+  sender: "&7You cast a spell on &6%target%&7."
+  target: "&6%sender% &7casts a spell on you."
+
+stab:
+  sender: "&7You stab &6%target% &7with a knife. Got bandaids?"
+  target: "&6%sender% &7stabs you with a knife. Got bandaids?"
+
+stalk:
+  sender: "&7You watch &6%target% &7from afar. O-O"
+  target: "&6%sender% &7watches you from afar. O-O"
+
+wave:
+  sender: "&7You wave to &6%target%&7. Hi!"
+  target: "&6%sender% &7waves to you. Hi!"
+
+whisper:
+  sender: "&7You whisper in &6%target%&7's ear."
+  target: "&6%sender% &7whispers in your ear."
+
+wink:
+  sender: "&7You wink at &6%target% &7. ;)"
+  target: "&6%sender% &7winks at you. ;)"
+
+yell:
+  sender: "&7You yell loudly at &6%target% &7for no reason."
+  target: "&6%sender% &7yells loudly at you from the top of their lungs."
+
+#------------------------------------------------
+# Feelings Chat Messages-------------------------
+#------------------------------------------------
+
+ #Placeholders
+# %sender% - shows the senders username
+# %s-display% - shows the senders display name
+
+afraid: "&6%sender% &7is feeling afraid."
+
+angry: "&6%sender% &7is feeling angry."
+
+annoyed: "&6%sender% &7is feeling annoyed."
+
+bored: "&6%sender% &7is feeling bored."
+
+calm: "&6%sender% &7is feeling calm."
+
+confused: "&6%sender% &7is feeling confused."
+
+crazy: "&6%sender% &7is feeling crazy."
+
+excited: "&6%sender% &7is feeling excited."
+
+guilty: "&6%sender% &7is feeling guilty."
+
+happy: "&6%sender% &7is feeling happy."
+
+jealous: "&6%sender% &7is feeling jealous."
+
+jolly: "&6%sender% &7is feeling jolly."
+
+lonely: "&6%sender% &7is feeling lonely."
+
+loved: "&6%sender% &7is feeling loved."
+
+nervous: "&6%sender% &7is feeling nervous."
+
+sad: "&6%sender% &7is feeling sad."
+
+scared: "&6%sender% &7is feeling scared."
+
+shy: "&6%sender% &7is feeling shy."
+
+worried: "&6%sender% &7is feeling worried."

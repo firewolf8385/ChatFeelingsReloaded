@@ -1,0 +1,159 @@
+name: ChatFeelingsReloaded
+version: 2.0
+author: FireWolf
+main: firewolf8385.chatfeelingsreloaded.Main
+commands:
+  chatfeelingsreloaded:
+    usage: /<command>
+    description: Main plugin command
+    aliases: [cfr, cf, chatfeelings]
+  actions:
+    usage: /<command>
+    description: List all actions
+  bite:
+    usage: /<command>
+    description: Bite a player
+  blush:
+    usage: /<command>
+    description: blush because of a player
+  boi:
+    usage: /<command>
+    description: Boi a player
+  cringe:
+    usage: /<command>
+    description: cringe at a player
+  cry:
+    usage: /<command>
+    description: cry towards a player
+  dab:
+    usage: /<command>
+    description: dab at a player
+  fight:
+    usage: /<command>
+    description: get ready to fight a player
+  hide:
+    usage: /<command>
+    description: hide a player
+  highfive:
+    usage: /<command>
+    description: highfive a player
+  hug:
+    usage: /<command>
+    description: hug a player
+  kiss:
+    usage: /<command>
+    description: kiss a player
+  lick:
+    usage: /<command>
+    description: lick a player
+  love:
+    usage: /<command>
+    description: love a player
+  murder:
+    usage: /<command>
+    description: murder a player
+  poke:
+    usage: /<command>
+    description: poke a player
+  punch:
+    usage: /<command>
+    description: punch a player
+  shake:
+    usage: /<command>
+    description: shake a player
+  shoes:
+    usage: /<command>
+    description: what are those
+  sing:
+    usage: /<command>
+    description: serenade a player
+  slap:
+    usage: /<command>
+    description: slap a player
+  sleep:
+    usage: /<command>
+    description: fall asleep
+  snuggle:
+    usage: /<command>
+    description: snuggle with a player
+  spell:
+    usage: /<command>
+    description: cast a spell on a player
+  stab:
+    usage: /<command>
+    description: stab a player
+  stalk:
+    usage: /<command>
+    description: stalk a player
+  wave:
+    usage: /<command>
+    description: wave at a player
+  whisper:
+    usage: /<command>
+    description: whisper in a players ear
+  wink:
+    usage: /<command>
+    description: wink at a player
+  yell:
+    usage: /<command>
+    description: yell at a player
+  feelings:
+    usage: /<command>
+    description: List feelings
+  afraid:
+    usage: /<command>
+    description: Say you're Afriad
+  angry:
+    usage: /<command>
+    description: Say you're Angry
+  annoyed:
+    usage: /<command>
+    description: Say you're Afriad
+  bored:
+    usage: /<command>
+    description: Say you're Afriad
+  calm:
+    usage: /<command>
+    description: Say you're Afriad
+  confused:
+    usage: /<command>
+    description: Say you're Afriad
+  crazy:
+    usage: /<command>
+    description: Say you're Afriad
+  excited:
+    usage: /<command>
+    description: Say you're Afriad
+  guilty:
+    usage: /<command>
+    description: Say you're Afriad
+  happy:
+    usage: /<command>
+    description: Say you're Afriad
+  jealous:
+    usage: /<command>
+    description: Say you're Afriad
+  jolly:
+    usage: /<command>
+    description: Say you're Afriad
+  lonely:
+    usage: /<command>
+    description: Say you're Afriad
+  loved:
+    usage: /<command>
+    description: Say you're Afriad
+  nervous:
+    usage: /<command>
+    description: Say you're Afriad
+  sad:
+    usage: /<command>
+    description: Say you're Afriad
+  scared:
+    usage: /<command>
+    description: Say you're Afriad
+  shy:
+    usage: /<command>
+    description: Say you're Afriad
+  worried:
+    usage: /<command>
+    description: Say you're Afriad
