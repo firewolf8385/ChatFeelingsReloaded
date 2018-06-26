@@ -133,6 +133,18 @@ public class Help implements CommandExecutor{
                     sender.sendMessage("");
                 }
             }
+            else{
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', grey + "----------" + gold1 + "Feelings " + yellow + "[1/3]" + grey + "----------"));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', settings.getConfig().getString("Afraid-Help")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', settings.getConfig().getString("Angry-Help")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', settings.getConfig().getString("Annoyed-Help")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', settings.getConfig().getString("Bored-Help")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', settings.getConfig().getString("Calm-Help")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', settings.getConfig().getString("Confused-Help")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', settings.getConfig().getString("Crazy-Help")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', settings.getConfig().getString("Excited-Help")));
+                sender.sendMessage(ChatColor.translateAlternateColorCodes('&', lightGrey + "Do " + gold2 + "/feelings 2 " + lightGrey + "for the next page."));
+            }
         }
         return true;
     }
