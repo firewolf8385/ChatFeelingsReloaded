@@ -39,7 +39,22 @@ public class Actions implements CommandExecutor{
                     }
                 }
                 else{
-                    sender.sendMessage(ChatColor.RED + "That player is not online.");
+                    if(args[0].equalsIgnoreCase("all")){
+                        if(sender.hasPermission("cfr.send.all")){
+                            for(Player player : Bukkit.getOnlinePlayers()){
+                                String tMessage = settings.getConfig().getString(label + ".target");
+                                String tMessage2 = tMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", player.getName()).replace("%t-dispalay%", target.getDisplayName());
+                            }
+                            String sMessage = settings.getConfig().getString(label + ".sender");
+                            String sMessage2 = sMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", "all").replace("%t-dispalay%", target.getDisplayName());
+                        }
+                        else{
+                            sender.sendMessage(ChatColor.RED + "That player is not online.");
+                        }
+                    }
+                    else {
+                        sender.sendMessage(ChatColor.RED + "That player is not online.");
+                    }
                 }
             }
             else{
