@@ -1,5 +1,5 @@
 name: ChatFeelingsReloaded
-version: 2.2.0
+version: 2.2.1
 author: FireWolf
 main: firewolf8385.chatfeelingsreloaded.ChatFeelingsReloaded
 commands:
@@ -169,6 +169,7 @@ permissions:
     description: Wildcard for all actions/feelings
     default: op
     children:
+      cfr.use.actions: true
       cfr.use.bite: true
       cfr.use.blush: true
       cfr.use.boi: true
@@ -200,6 +201,7 @@ permissions:
       cfr.use.whisper: true
       cfr.use.wink: true
       cfr.use.yell: true
+      cfr.use.feelings: true
       cfr.use.afraid: true
       cfr.use.angry: true
       cfr.use.annoyed: true
@@ -219,3 +221,58 @@ permissions:
       cfr.use.scared: true
       cfr.use.shy: true
       cfr.use.worried: true
+
+  cfr.use.actions.all:
+    cfr.use.bite: true
+    cfr.use.blush: true
+    cfr.use.boi: true
+    cfr.use.cringe: true
+    cfr.use.cry: true
+    cfr.use.dab: true
+    cfr.use.fight: true
+    cfr.use.hide: true
+    cfr.use.highfive: true
+    cfr.use.hug: true
+    cfr.use.kiss: true
+    cfr.use.lick: true
+    cfr.use.love: true
+    cfr.use.murder: true
+    cfr.use.pat: true
+    cfr.use.poke: true
+    cfr.use.punch: true
+    cfr.use.shake: true
+    cfr.use.shoes: true
+    cfr.use.scorn: true
+    cfr.use.sing: true
+    cfr.use.slap: true
+    cfr.use.sleep: true
+    cfr.use.snuggle: true
+    cfr.use.spell: true
+    cfr.use.stab: true
+    cfr.use.stalk: true
+    cfr.use.wave: true
+    cfr.use.whisper: true
+    cfr.use.wink: true
+    cfr.use.yell: true
+
+  cfr.use.feelings.all:
+    cfr.use.feelings: true
+    cfr.use.afraid: true
+    cfr.use.angry: true
+    cfr.use.annoyed: true
+    cfr.use.bored: true
+    cfr.use.calm: true
+    cfr.use.confused: true
+    cfr.use.crazy: true
+    cfr.use.excited: true
+    cfr.use.guilty: true
+    cfr.use.happy: true
+    cfr.use.jealous: true
+    cfr.use.holly: true
+    cfr.use.lonely: true
+    cfr.use.loved: true
+    cfr.use.nervous: true
+    cfr.use.sad: true
+    cfr.use.scared: true
+    cfr.use.shy: true
+    cfr.use.worried: true
