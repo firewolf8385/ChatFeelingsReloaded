@@ -2,6 +2,7 @@ package firewolf8385.chatfeelingsreloaded.events;
 
 import firewolf8385.chatfeelingsreloaded.SettingsManager;
 import firewolf8385.chatfeelingsreloaded.Utils;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
@@ -14,6 +15,8 @@ public class PlayerJoin implements Listener
      * Runs when a player joins the server.
      * @param e The event
      */
+
+    @EventHandler
     public void onJoin(PlayerJoinEvent e)
     {
         if(settings.getConfig().getInt("ConfigVersion") != 2)
