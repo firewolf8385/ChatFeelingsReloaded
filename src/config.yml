@@ -8,7 +8,7 @@
 #warns you when the config file does not match the version needed. This number
 # may be changed when the correct additions to the config are made.
 
-ConfigVersion: 1
+ConfigVersion: 2
 
 
 
@@ -65,8 +65,16 @@ PluginDisabled: "&cChatFeelingsReloaded has been disabled"
 OutdatedConfig: "&6&lCFR &8> &cConfig is outdated! New features will not work until this is corrected."
 
 #Default: &cUsage: %command% [player]
-ActionUsage: "&cUsage: %command% [player]"
+ActionUsage: "&cUsage: /%command% [player]"
 
+#Default: &cUsage: %command% <player>
+FeelingsUsage: "&cUsage: /%command% <player>"
+
+#Default: &cYou cannot send that to yourslef!
+SelfMessage: "&cYou cannot send that to yourself!"
+
+#Default: "&cPlayer &f%target% &cis not online!"
+NotOnline: "&cPlayer &f%target% &cis not online!"
 
 #------------------------------------------------
 # Actions Help Pages-----------------------------
@@ -100,9 +108,13 @@ Love-Help: "&6/love &8- &fGives someone lots of love!"
 
 Murder-Help: "&6/murder &8- &fMurders a player, Muhaha!"
 
+Pat-Help: "&6/pat &8- &fPat someone on the head!"
+
 Poke-Help: "&6/poke &8- &fPoke someone to get their attention!"
 
 Punch-Help: "&6/punch &8- &fPunches a player, ouch!"
+
+Scorn-Help: "&6/scorn &8- &fScorn someone to show your disapproval."
 
 Shake-Help: "&6/shake &8- &fShakes a player to their feet."
 
@@ -240,6 +252,10 @@ murder:
   sender: "&7You murder &6%target%&7. Bandaid anyone?"
   target: "&6%sender% &7just murdered you. Bandaid anyone?"
 
+pat:
+  sender: "&7You gently pat &6%target%&7's head for being good."
+  target: "&6%sender% &7gently pats your head for being good."
+
 poke:
   sender: "&7You poke &6%target% &7... Maybe they're on vacation?"
   target: "&6%sender% &7has poked you! Anyone there?"
@@ -247,6 +263,10 @@ poke:
 punch:
   sender: "&7You strike &6%target% &7with a punch, Ouch!"
   target: "&6%sender% &7strikes you with a punch, Ouch!"
+
+scorn:
+  sender: "&7You scorn &6%target% &7for what they've done."
+  target: "&6%sender% &7scorns you for what you have done."
 
 shake:
   sender: "&7You harlem shake &6%target%  &7's entire body."
@@ -300,11 +320,11 @@ yell:
   sender: "&7You yell loudly at &6%target% &7for no reason."
   target: "&6%sender% &7yells loudly at you from the top of their lungs."
 
-#------------------------------------------------
-# Feelings Chat Messages-------------------------
-#------------------------------------------------
+  #------------------------------------------------
+  # Feelings Chat Messages-------------------------
+  #------------------------------------------------
 
- #Placeholders
+  #Placeholders
 # %sender% - shows the senders username
 # %s-display% - shows the senders display name
 

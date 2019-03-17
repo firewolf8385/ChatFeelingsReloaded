@@ -1,7 +1,7 @@
 name: ChatFeelingsReloaded
-version: 2.0
+version: 2.2.0
 author: FireWolf
-main: firewolf8385.chatfeelingsreloaded.Main
+main: firewolf8385.chatfeelingsreloaded.ChatFeelingsReloaded
 commands:
   chatfeelingsreloaded:
     usage: /<command>
@@ -52,6 +52,9 @@ commands:
   murder:
     usage: /<command>
     description: murder a player
+  pat:
+    usage: /<command>
+    description: pat a player
   poke:
     usage: /<command>
     description: poke a player
@@ -64,6 +67,9 @@ commands:
   shoes:
     usage: /<command>
     description: what are those
+  scorn:
+    usage: /<command>
+    description: Scorn a player
   sing:
     usage: /<command>
     description: serenade a player
@@ -177,10 +183,12 @@ permissions:
       cfr.use.lick: true
       cfr.use.love: true
       cfr.use.murder: true
+      cfr.use.pat: true
       cfr.use.poke: true
       cfr.use.punch: true
       cfr.use.shake: true
       cfr.use.shoes: true
+      cfr.use.scorn: true
       cfr.use.sing: true
       cfr.use.slap: true
       cfr.use.sleep: true

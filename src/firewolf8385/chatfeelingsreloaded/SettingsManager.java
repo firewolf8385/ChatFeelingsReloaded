@@ -1,19 +1,22 @@
 package firewolf8385.chatfeelingsreloaded;
 
-import java.io.File;
-import java.io.IOException;
-
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
+import java.io.File;
+import java.io.IOException;
 
-public class SettingsManager {
+public class SettingsManager
+{
 
-    private SettingsManager() { }
-
+    private SettingsManager() {}
     static SettingsManager instance = new SettingsManager();
 
-    public static SettingsManager getInstance() {
+    /**
+     * This allows us to access an instance of this class.
+     */
+    public static SettingsManager getInstance()
+    {
         return instance;
     }
 
@@ -22,31 +25,47 @@ public class SettingsManager {
     File configFile;
 
 
-    // Creates the config file if it does not exist
-    public void setup(Plugin pl) {
-
+    /**
+     * This allows us to set up the config file if it does not exist.
+     * @param pl Instance of the Plugin
+     */
+    public void setup(Plugin pl)
+    {
         config = pl.getConfig();
         config.options().copyDefaults(true);
         configFile = new File(pl.getDataFolder(), "config.yml");
         pl.saveDefaultConfig();
-
     }
 
-
-    public FileConfiguration getConfig() {
-        return config; // Allows us to get data from config.yml
+    /**
+     * Allows us to access the config file.
+     * @return config file
+     */
+    public FileConfiguration getConfig()
+    {
+        return config;
     }
 
-    public void saveConfig() { // Attempts to save config.yml
-        try {
+    /**
+     * Allows us to save the config file after changes are made.
+     */
+    public void saveConfig()
+    {
+        try
+        {
             config.save(configFile);
-        } catch (IOException e) {
+        }
+        catch(IOException e)
+        {
             e.printStackTrace();
         }
     }
 
-    public void reloadConfig() { // Allows us to reload the config in game
+    /**
+     * This updates the config in case changes are made.
+     */
+    public void reloadConfig()
+    {
         config = YamlConfiguration.loadConfiguration(configFile);
     }
-
 }

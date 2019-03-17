@@ -1,68 +1,92 @@
 package firewolf8385.chatfeelingsreloaded.commands;
 
+import firewolf8385.chatfeelingsreloaded.SettingsManager;
+import firewolf8385.chatfeelingsreloaded.Utils;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import firewolf8385.chatfeelingsreloaded.SettingsManager;
+public class Actions implements CommandExecutor
+{
+    SettingsManager settings = SettingsManager.getInstance();
+    Utils utils = Utils.getInstance();
 
-public class Actions implements CommandExecutor{
 
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-
-        SettingsManager settings = SettingsManager.getInstance();
+    /**
+     *  This allows us to process a command.
+     *
+     * @param sender Player who sent the command
+     * @param cmd The name of the command in plugin.yml
+     * @param label The name of the command
+     * @param args command arguments
+     * @return if the command ran successfully.
+     */
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+    {
         String command = label.toLowerCase();
+        Player p = (Player) sender;
 
-        if(sender.hasPermission("cfr.use." + command)) {
-            if(args.length != 0){
+        if(sender.hasPermission("cfr.use." + command))
+        {
+            if(args.length != 0)
+            {
                 Player target = Bukkit.getPlayer(args[0]);
-
-                if(target != null){
-
-                    if(sender == target){
-                        sender.sendMessage(ChatColor.RED + "You cannot send that to yourself!");
+                String prefix = settings.getConfig().getString("Action-Prefix");
+                
+                if(target != null)
+                {
+                    if(sender == target)
+                    {
+                        utils.sendChat(p, settings.getConfig().getString("SelfMessage"));
                     }
-                    else{
+                    else {
                         String sMessage = settings.getConfig().getString(label + ".sender");
                         String sMessage2 = sMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", target.getName()).replace("%t-dispalay%", target.getDisplayName());
 
                         String tMessage = settings.getConfig().getString(label + ".target");
                         String tMessage2 = tMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", target.getName()).replace("%t-dispalay%", target.getDisplayName());
 
-                        String prefix = settings.getConfig().getString("Action-Prefix");
+                        utils.sendChat(p, prefix + sMessage2);
+                        utils.sendChat(target, prefix + tMessage2);
+                    }
+                }
+                else if(args[0].equalsIgnoreCase("all"))
+                {
+                    if(sender.hasPermission("cfr.send.all"))
+                    {
+                        for(Player player : Bukkit.getOnlinePlayers()){
+                            String tMessage = settings.getConfig().getString(label + ".target");
+                            String tMessage2 = tMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", player.getName()).replace("%t-dispalay%", target.getDisplayName());
 
-                        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + sMessage2));
-                        target.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + tMessage2));
+                            utils.sendChat(player, prefix + tMessage2);
+                        }
+                        String sMessage = settings.getConfig().getString(label + ".sender");
+                        String sMessage2 = sMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", "all").replace("%t-dispalay%", target.getDisplayName());
+
+                        utils.sendChat(p, prefix + sMessage2);
+                    }
+                    else
+                    {
+                        utils.sendChat(p, settings.getConfig().getString("NotOnline").replace("NotOnline", args[0]));
                     }
                 }
-                else{
-                    if(args[0].equalsIgnoreCase("all")){
-                        if(sender.hasPermission("cfr.send.all")){
-                            for(Player player : Bukkit.getOnlinePlayers()){
-                                String tMessage = settings.getConfig().getString(label + ".target");
-                                String tMessage2 = tMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", player.getName()).replace("%t-dispalay%", target.getDisplayName());
-                            }
-                            String sMessage = settings.getConfig().getString(label + ".sender");
-                            String sMessage2 = sMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", "all").replace("%t-dispalay%", target.getDisplayName());
-                        }
-                        else{
-                            sender.sendMessage(ChatColor.RED + "That player is not online.");
-                        }
-                    }
-                    else {
-                        sender.sendMessage(ChatColor.RED + "That player is not online.");
-                    }
+                else
+                {
+                    utils.sendChat(p, settings.getConfig().getString("NotOnline").replace("%target%", args[0]));
                 }
             }
-            else{
-                sender.sendMessage(ChatColor.RED + "Usage: /" + command + " [player]");
+            else
+            {
+                utils.sendChat(p, settings.getConfig().getString("ActionUsage").replace("%command%", command));
             }
+        }
+        else
+        {
+            utils.sendChat(p, settings.getConfig().getString("NoPermission"));
         }
 
         return true;
     }
-
 }
