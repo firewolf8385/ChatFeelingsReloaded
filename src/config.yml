@@ -8,8 +8,16 @@
 #warns you when the config file does not match the version needed. This number
 # may be changed when the correct additions to the config are made.
 
-ConfigVersion: 2
+ConfigVersion: 3
 
+
+
+#------------------------------------------------------------------------
+# Settings
+#------------------------------------------------------------------------
+
+#When true, actions will be announced to everyone on the server.
+AnnounceActionsGlobally: false
 
 
 #------------------------------------------------------------------------
@@ -199,130 +207,161 @@ Worried-Help: "&6/worried &8- &fTell everyone you are feeling worried"
 bite:
   sender: "&7You sink your teeth into &6%target%&7's skin."
   target: "&6%sender% &7sinks their teeth into your skin."
+  global: "&6%sender% &7sinks their teeth into &6%target%&7's skin."
 
 blush:
   sender: "&7Your face turns bright pink in front of &6%target%&7. &ccx"
   target: "&6%sender%&7's face turns bright pink in front of you. &ccx"
+  global: "&6%sender%&7's face turns bring pink in front of &6%target%&7. &ccx"
 
 boi:
   sender: "&7You inhale to &6%target%&7... &eBOI"
   target: "&6%target% &7inhales to you... &eBOI"
+  global: "&6%sender%&7 inhales to &6%target%&7... &eBOI"
 
 cringe:
   sender: "&7You cringe at &6%target%&7's actions."
   target: "&6%sender% &7cringes at your actions."
+  global: "&6%sender%&7 cringes at &6%target%&7's actions,"
 
 cry:
   sender: "&7You shed a tear towards &6%target%"
   target: "&6%sender% &7sheds a tear towards you."
+  global: "&6%sender%&7 sheds a tear towards &6%starget%&7."
 
 dab:
   sender: "&7You freshly dab on &6%target%&7... Nailed it."
-  target: "&6%sender% &7freshly dabs on you..."
+  target: "&6%sender% &7freshly dabs on you... Nailed it."
+  global: "&6%sender%&7 freshly dabs on &6%target%&7... Nailed it."
 
 fight:
   sender: "&7You get ready to fight &6%target%&7."
   target: "&6%sender% &7gets ready to fight you."
+  global: "&6%sender%&7 gets ready to fight &6%target%&7."
 
 hide:
   sender: "&7You duck behind a rock to hide from &6%target%&7."
-  target: "&6%sender% &7hides from you."
+  target: "&6%sender% &7ducks behind a rock to hide from you."
+  global: "&6%sender%&7 ducks behind a rock to hide from &6%target%&7."
 
 highfive:
-  sender: "&7You give a might highfive to &6%target%&7."
-  target: "&6%sender% &7gives you a might highfive."
+  sender: "&7You give a mighty highfive to &6%target%&7."
+  target: "&6%sender% &7gives you a mighty highfive."
+  global: "&6%sender%&7 gives &6%target%&7 a mighty highfive."
 
 hug:
   sender: "&7You give &6%target% &7a warm hug. &cAwww ❤"
   target: "&6%sender% &7gives you a warm hug. &cAwww ❤"
+  global: "&6%sender%&7 gives &6%target%&7 a warm hug. &cAwww ❤"
 
 kiss:
   sender: "&7You give &6%target%&7 a kiss. &cAwww ❤"
   target: "&6%sender% &7gives you a kiss. &cAwww ❤"
+  global: "&6%sender%&7 gives &6%target%&7 a kiss. &cAww ❤"
 
 lick:
-  sender: "&7You lick &6%target% + &7like icecream... &3Gross!"
+  sender: "&7You lick &6%target% &7like icecream... &3Gross!"
   target: "&6%sender% &7licks you like icecream... &3Gross!"
+  global: "&6%sender%&7 licks &6%target%&7 like icecream... &3Gross!"
 
 love:
   sender: "&7You send &6%target% &7lots of love. &c❤"
   target: "&6%sender% &7sends you lots of love. &c❤"
+  global: "&6%sender%&7 sends &6%target%&7 lots of love. &c❤"
 
 murder:
   sender: "&7You murder &6%target%&7. Bandaid anyone?"
   target: "&6%sender% &7just murdered you. Bandaid anyone?"
+  global: "&6%sender%&7 just murdered &6%target%&7. Bandaid anyone?"
 
 pat:
   sender: "&7You gently pat &6%target%&7's head for being good."
   target: "&6%sender% &7gently pats your head for being good."
+  global: "&6%sender%&7 gently pats &6%target%&7's head for being good."
 
 poke:
   sender: "&7You poke &6%target% &7... Maybe they're on vacation?"
   target: "&6%sender% &7has poked you! Anyone there?"
+  global: "&6%sender%&7 poked &6%target%&7... Maybe they're on vacation?"
 
 punch:
   sender: "&7You strike &6%target% &7with a punch, Ouch!"
   target: "&6%sender% &7strikes you with a punch, Ouch!"
+  global: "&6%sender%&7 strikes &6%target%&7 with a punch, Ouch!"
 
 scorn:
   sender: "&7You scorn &6%target% &7for what they've done."
   target: "&6%sender% &7scorns you for what you have done."
+  global: "&6%sender%&7 scorns &6%target%&7 for what they have done."
 
 shake:
   sender: "&7You harlem shake &6%target%  &7's entire body."
   target: "&6%sender% &7harlem shakes your entire body."
+  global: "&6%sender%&7 harlem shakes &6%target%&7's entire body."
 
 shoes:
   sender: "&7You yell to &6%target%&7, WHAT ARE THOOOOOSE?"
   target: "&6%sender% &7yells to you, WHAT ARE THOOOOOSE?"
+  global: "&6%sender%&7 yells to &6%target%&7, WHAT ARE THOOOOOSE?"
 
 sing:
   sender: "&7You serenade &6%target% &7with your beautiful voice."
   target: "&6%sender% &7serenades you with their beautiful voice."
+  global: "&6%sender%&7 serenades &6%target%&7 with their beautiful voice."
 
 slap:
   sender: "&7You slap &6%target% &7with some Spaghetti."
   target: "&6%sender% &7slaps you with some Spahgetti."
+  global: "&6%sender%&7 slaps &6%target%&7 with some Spahgetti."
 
 sleep:
   sender: "&7You fall asleep infront of &6%target%&7. Zzzzzzz."
   target: "&6%sender% &7falls asleep infront of you. Zzzzzzz."
+  global: "&6%sender%&7 falls asleep infront of &6%target%&7. Zzzzzzz."
 
 snuggle:
   sender: "&7You snuggle &6%target% &7with love. &cAwww ❤"
   target: "&6%sender% &7snuggles you with love. &cAwww ❤"
+  global: "&6%sender%&7 snuggles &6%target%&7 with love. &cAwww ❤"
 
 spell:
   sender: "&7You cast a spell on &6%target%&7."
   target: "&6%sender% &7casts a spell on you."
+  global: "&6%sender%&7 casts a spell on &6%target%&7."
 
 stab:
   sender: "&7You stab &6%target% &7with a knife. Got bandaids?"
   target: "&6%sender% &7stabs you with a knife. Got bandaids?"
+  global: "&6%sender%&7 stabs &6%target%&7 with a knife. Got bandaids?"
 
 stalk:
   sender: "&7You watch &6%target% &7from afar. O-O"
   target: "&6%sender% &7watches you from afar. O-O"
+  global: "&6%sender%&7 watches &6%target%&7 from afar. O-O"
 
 wave:
   sender: "&7You wave to &6%target%&7. Hi!"
   target: "&6%sender% &7waves to you. Hi!"
+  global: "&6%sender%&7 waves to &6%target%&7. Hi!"
 
 whisper:
   sender: "&7You whisper in &6%target%&7's ear."
   target: "&6%sender% &7whispers in your ear."
+  global: "&6%sender%&7 whispers in &6%target%&7's ear."
 
 wink:
   sender: "&7You wink at &6%target% &7. ;)"
   target: "&6%sender% &7winks at you. ;)"
+  global: "&6%sender%&7 winks at &6%target%&7. ;)"
 
 yell:
   sender: "&7You yell loudly at &6%target% &7for no reason."
   target: "&6%sender% &7yells loudly at you from the top of their lungs."
+  global: "&6%sender%&7 yells loudly at &6%target%&7 from the top of their lungs."
 
-  #------------------------------------------------
-  # Feelings Chat Messages-------------------------
-  #------------------------------------------------
+#------------------------------------------------
+# Feelings Chat Messages-------------------------
+#------------------------------------------------
 
   #Placeholders
 # %sender% - shows the senders username
