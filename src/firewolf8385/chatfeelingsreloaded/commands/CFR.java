@@ -2,10 +2,12 @@ package firewolf8385.chatfeelingsreloaded.commands;
 
 import firewolf8385.chatfeelingsreloaded.SettingsManager;
 import firewolf8385.chatfeelingsreloaded.Utils;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginDescriptionFile;
 
 public class CFR implements CommandExecutor
 {
@@ -44,7 +46,7 @@ public class CFR implements CommandExecutor
                 // Displays plugin version.
                 case "version":
                     utils.sendChat(p, colorOne + "----------" + colorTwo + "ChatFeelings Reloaded" + colorOne + "----------");
-                    utils.sendChat(p, colorThree + "Version " + colorOne + "- &r2.2.0");
+                    utils.sendChat(p, colorThree + "Version " + colorOne + "- &r2.3.0");
                     break;
 
                 // Displays link to support discord.
@@ -57,7 +59,6 @@ public class CFR implements CommandExecutor
                 case "reload":
                     if(p.hasPermission("cfr.admin"))
                     {
-                        settings.saveConfig();
                         settings.reloadConfig();
                         utils.sendChat(p, settings.getConfig().getString("ConfigReloaded"));
                     }
@@ -70,7 +71,7 @@ public class CFR implements CommandExecutor
                 // Displays information about the plugin.
                 default:
                     utils.sendChat(p, colorOne + "----------" + colorTwo + "ChatFeelings Reloaded" + colorOne + "----------");
-                    utils.sendChat(p, colorThree + "Version " + colorOne + "- &r2.2.0");
+                    utils.sendChat(p, colorThree + "Version " + colorOne + "- &r2.3.0");
                     utils.sendChat(p, colorThree + "Author " + colorOne + "- &rFireWolf");
                     utils.sendChat(p, colorThree + "Spigot " + colorOne + "- &rhttps://www.spigotmc.org/resources/chatfeelings-reloaded.45169/");
                     break;
@@ -79,7 +80,7 @@ public class CFR implements CommandExecutor
         else
         {
             utils.sendChat(p, colorOne + "----------" + colorTwo + "ChatFeelings Reloaded" + colorOne + "----------");
-            utils.sendChat(p, colorThree + "Version " + colorOne + "- &r2.2.0");
+            utils.sendChat(p, colorThree + "Version " + colorOne + "- &r2.3.0");
             utils.sendChat(p, colorThree + "Author " + colorOne + "- &rFireWolf");
             utils.sendChat(p, colorThree + "Spigot " + colorOne + "- &rhttps://www.spigotmc.org/resources/chatfeelings-reloaded.45169/");
         }
