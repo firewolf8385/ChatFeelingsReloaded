@@ -3,6 +3,7 @@ package firewolf8385.chatfeelingsreloaded.commands;
 import firewolf8385.chatfeelingsreloaded.SettingsManager;
 import firewolf8385.chatfeelingsreloaded.Utils;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -42,14 +43,35 @@ public class Actions implements CommandExecutor
                         utils.sendChat(p, settings.getConfig().getString("SelfMessage"));
                     }
                     else {
-                        String sMessage = settings.getConfig().getString(label + ".sender");
-                        String sMessage2 = sMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", target.getName()).replace("%t-dispalay%", target.getDisplayName());
+                        if(settings.getConfig().getBoolean("AnnounceActionsGlobally"))
+                        {
+                            String message = settings.getConfig().getString(label + ".global")
+                                    .replace("%sender%", sender.getName())
+                                    .replace("%s-display%", sender.getName())
+                                    .replace("%target%", target.getName())
+                                    .replace("%t-dispalay%", target.getDisplayName());
 
-                        String tMessage = settings.getConfig().getString(label + ".target");
-                        String tMessage2 = tMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", target.getName()).replace("%t-dispalay%", target.getDisplayName());
+                            Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', prefix + message));
+                        }
+                        else
+                        {
+                            String sMessage = settings.getConfig().getString(label + ".sender");
+                            String sMessage2 = sMessage
+                                    .replace("%sender%", sender.getName())
+                                    .replace("%s-display%", sender.getName())
+                                    .replace("%target%", target.getName())
+                                    .replace("%t-dispalay%", target.getDisplayName());
 
-                        utils.sendChat(p, prefix + sMessage2);
-                        utils.sendChat(target, prefix + tMessage2);
+                            String tMessage = settings.getConfig().getString(label + ".target");
+                            String tMessage2 = tMessage
+                                    .replace("%sender%", sender.getName())
+                                    .replace("%s-display%", sender.getName())
+                                    .replace("%target%", target.getName())
+                                    .replace("%t-dispalay%", target.getDisplayName());
+
+                            utils.sendChat(p, prefix + sMessage2);
+                            utils.sendChat(target, prefix + tMessage2);
+                        }
                     }
                 }
                 else if(args[0].equalsIgnoreCase("all"))
@@ -58,12 +80,23 @@ public class Actions implements CommandExecutor
                     {
                         for(Player player : Bukkit.getOnlinePlayers()){
                             String tMessage = settings.getConfig().getString(label + ".target");
-                            String tMessage2 = tMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", player.getName()).replace("%t-dispalay%", target.getDisplayName());
+                            String tMessage2 = tMessage
+                                    .replace("%sender%", sender.getName())
+                                    .replace("%s-display%", sender.getName())
+                                    .replace("%target%", player.getName())
+                                    .replace("%t-dispalay%", player.getDisplayName());
 
-                            utils.sendChat(player, prefix + tMessage2);
+                            if(!(player.getName().equals(sender.getName())))
+                            {
+                                utils.sendChat(player, prefix + tMessage2);
+                            }
                         }
                         String sMessage = settings.getConfig().getString(label + ".sender");
-                        String sMessage2 = sMessage.replace("%sender%", sender.getName()).replace("%s-display%", sender.getName()).replace("%target%", "all").replace("%t-dispalay%", target.getDisplayName());
+                        String sMessage2 = sMessage
+                                .replace("%sender%", sender.getName())
+                                .replace("%s-display%", sender.getName())
+                                .replace("%target%", "everyone")
+                                .replace("%t-dispalay%", "everyone");
 
                         utils.sendChat(p, prefix + sMessage2);
                     }
