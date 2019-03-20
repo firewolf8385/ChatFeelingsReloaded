@@ -102,7 +102,7 @@ public class Actions implements CommandExecutor
                     }
                     else
                     {
-                        utils.sendChat(p, settings.getConfig().getString("NotOnline").replace("NotOnline", args[0]));
+                        utils.sendChat(p, settings.getConfig().getString("NotOnline").replace("%target%", args[0]));
                     }
                 }
                 else
