@@ -8,7 +8,7 @@
 #warns you when the config file does not match the version needed. This number
 # may be changed when the correct additions to the config are made.
 
-ConfigVersion: 3
+ConfigVersion: 4
 
 
 
@@ -70,7 +70,7 @@ NoPermission: "&cYou do not have access to that command"
 PluginDisabled: "&cChatFeelingsReloaded has been disabled"
 
 #Default: &6&lCFR &8> &cConfig is outdated! New features will not work until this is corrected.
-OutdatedConfig: "&6&lCFR &8> &cConfig is outdated! New features will not work until this is corrected."
+OutdatedConfig: "&6&lCFR &8- &cConfig is outdated! New features will not work until this is corrected."
 
 #Default: &cUsage: %command% [player]
 ActionUsage: "&cUsage: /%command% [player]"
@@ -84,118 +84,12 @@ SelfMessage: "&cYou cannot send that to yourself!"
 #Default: "&cPlayer &f%target% &cis not online!"
 NotOnline: "&cPlayer &f%target% &cis not online!"
 
-#------------------------------------------------
-# Actions Help Pages-----------------------------
-#------------------------------------------------
-
-Bite-Help: "&6/bite &8- &fBites a player, OUCH!"
-
-Blush-Help: "&6/blush &8- &fTurns your face red, how embarrassing!"
-
-Boi-Help: "&6/boi &8- &fHere comes dat boi!"
-
-Cringe-Help: "&6/cringe &8- &fCringe at those who deserve it"
-
-Cry-Help: "&6/cry &8- &fCray at a player, how sad."
-
-Dab-Help: "&6/dab &8- &fWarning, this will make you cool"
-
-Fight-Help: "&6/fight &8- &fPrepare yourself for a fight"
-
-Hide-Help: "&6/hide &8- &fDuck behind a rock"
-
-Highfive-Help: "&6/highfive &8- &fShows your support and highfives a player!"
-
-Hug-Help: "&6/hug &8- &fGives somebody a nice warm hug!"
-
-Kiss-Help: "&6/kiss &8- &fGives a player a squishy kiss!"
-
-Lick-Help: "&6/lick &8- &fLick someone like an icecream sundae."
-
-Love-Help: "&6/love &8- &fGives someone lots of love!"
-
-Murder-Help: "&6/murder &8- &fMurders a player, Muhaha!"
-
-Pat-Help: "&6/pat &8- &fPat someone on the head!"
-
-Poke-Help: "&6/poke &8- &fPoke someone to get their attention!"
-
-Punch-Help: "&6/punch &8- &fPunches a player, ouch!"
-
-Scorn-Help: "&6/scorn &8- &fScorn someone to show your disapproval."
-
-Shake-Help: "&6/shake &8- &fShakes a player to their feet."
-
-Shoes-Help: "&6/shoes  &8- &fWhat 'r those!?!?"
-
-Sing-Help: "&6/sing &8- &fSing to the world!"
-
-Slap-Help: "&6/slap &8- &f Gives someone a piece of yuor mind!"
-
-Sleep-Help: "&6/sleep &8- &fZzzzzzzzzzzzzz"
-
-Snuggle-Help: "&6/snuggle &8- &fSnuggles a player with hugs."
-
-Spell-Help: "&6/spell &8- &fCast a magical spell on someone!"
-
-Stab-Help: "&6/stab &8- &fStabs a player, need a bandaid?"
-
-Stalk-Help: "&6/stalk &8- &fStare at a player O-O"
-
-Wave-Help: "&6/wave &8- &fWave at a player."
-
-Whisper-Help: "&6/whisper &8- &fWhisper into someone's ear."
-
-Wink-Help: "&6/wink &8- &f Wink at a player ;)"
-
-Yell-Help: "&6/yell &8- &f Yells at a player, inside voices please."
+#Default: "&6&lCFR &8- &cConfig file has been reloaded."
+ConfigReloaded: "&6&lCFR &8- &cConfig file has been reloaded."
 
 
 #------------------------------------------------
-# Feelings Help Pages----------------------------
-#------------------------------------------------
-
-Afraid-Help: "&6/afraid &8- &fTell everyone you are feeling afraid"
-
-Angry-Help: "&6/angry &8- &fTell everyone you are feeling angry"
-
-Annoyed-Help: "&6/annoyed &8- &fTell everyone you are feeling annoyed"
-
-Bored-Help: "&6/bored &8- &fTell everyone you are feeling bored"
-
-Calm-Help: "&6/calm &8- &fTell everyone you are feeling calm"
-
-Confused-Help: "&6/confused &8- &fTell everyone you are feeling confused"
-
-Crazy-Help: "&6/crazy &8- &fTell everyone you are feeling crazy"
-
-Excited-Help: "&6/excited &8- &fTell everyone you are feeling excited"
-
-Guilty-Help: "&6/guilty &8- &fTell everyone you are feeling jealous"
-
-Happy-Help: "&6/happy &8- &fTell everyone you are feeling happy"
-
-Jealous-Help: "&6/jealous &8- &fTell everyone you are feeling jealous"
-
-Jolly-Help: "&6/jolly &8- &fTell everyone you are feeling Jolly"
-
-Lonely-Help: "&6/lonely &8- &fTell everyone you are feeling lonely"
-
-Loved-Help: "&6/loved &8- &fTell everyone you are feeling loved"
-
-Nervous-Help: "&6/nervous &8- &fTell everyone you are feeling nervous"
-
-Sad-Help: "&6/sad &8- &fTell everyone you are feeling sad"
-
-Scared-Help: "&6/scared &8- &fTell everyone you are feeling shy"
-
-Shy-Help: "&6/shy &8- &fTell everyone you are feelng shy"
-
-Worried-Help: "&6/worried &8- &fTell everyone you are feeling worried"
-
-
-#------------------------------------------------
-# Actions Chat Messages--------------------------
+# Actions ---------------------------------------
 #------------------------------------------------
 
 #Placeholders
@@ -203,204 +97,326 @@ Worried-Help: "&6/worried &8- &fTell everyone you are feeling worried"
 # %s-display% - shows the senders display name
 # %target% - shows the target's
 # %t-display% - show the targets display name
+Actions:
+  bite:
+    sender: "&7You sink your teeth into &6%target%&7's skin."
+    target: "&6%sender% &7sinks their teeth into your skin."
+    global: "&6%sender% &7sinks their teeth into &6%target%&7's skin."
+    help: "&6/bite &8- &fBites a player, OUCH!"
+    particle: null
+    sound: null
+  blush:
+    sender: "&7Your face turns bright pink in front of &6%target%&7. &ccx"
+    target: "&6%sender%&7's face turns bright pink in front of you. &ccx"
+    global: "&6%sender%&7's face turns bring pink in front of &6%target%&7. &ccx"
+    help: "&6/blush &8- &fTurns your face red, how embarrassing!"
+    particle: null
+    sound: null
+  boi:
+    sender: "&7You inhale to &6%target%&7... &eBOI"
+    target: "&6%target% &7inhales to you... &eBOI"
+    global: "&6%sender%&7 inhales to &6%target%&7... &eBOI"
+    help: "&6/boi &8- &fHere comes dat boi!"
+    particle: null
+    sound: null
+  cringe:
+    sender: "&7You cringe at &6%target%&7's actions."
+    target: "&6%sender% &7cringes at your actions."
+    global: "&6%sender%&7 cringes at &6%target%&7's actions,"
+    help: "&6/cringe &8- &fCringe at those who deserve it"
+    particle: null
+    sound: null
+  cry:
+    sender: "&7You shed a tear towards &6%target%"
+    target: "&6%sender% &7sheds a tear towards you."
+    global: "&6%sender%&7 sheds a tear towards &6%starget%&7."
+    help: "&6/cry &8- &fCray at a player, how sad."
+    particle: null
+    sound: null
+  dab:
+    sender: "&7You freshly dab on &6%target%&7... Nailed it."
+    target: "&6%sender% &7freshly dabs on you... Nailed it."
+    global: "&6%sender%&7 freshly dabs on &6%target%&7... Nailed it."
+    help: "&6/dab &8- &fWarning, this will make you cool"
+    particle: null
+    sound: null
+  fight:
+    sender: "&7You get ready to fight &6%target%&7."
+    target: "&6%sender% &7gets ready to fight you."
+    global: "&6%sender%&7 gets ready to fight &6%target%&7."
+    help: "&6/fight &8- &fPrepare yourself for a fight"
+    particle: null
+    sound: null
+  hide:
+    sender: "&7You duck behind a rock to hide from &6%target%&7."
+    target: "&6%sender% &7ducks behind a rock to hide from you."
+    global: "&6%sender%&7 ducks behind a rock to hide from &6%target%&7."
+    help: "&6/hide &8- &fDuck behind a rock"
+    particle: null
+    sound: null
+  highfive:
+    sender: "&7You give a mighty highfive to &6%target%&7."
+    target: "&6%sender% &7gives you a mighty highfive."
+    global: "&6%sender%&7 gives &6%target%&7 a mighty highfive."
+    help: "&6/highfive &8- &fShows your support and highfives a player!"
+    particle: null
+    sound: null
+  hug:
+    sender: "&7You give &6%target% &7a warm hug. &cAwww ❤"
+    target: "&6%sender% &7gives you a warm hug. &cAwww ❤"
+    global: "&6%sender%&7 gives &6%target%&7 a warm hug. &cAwww ❤"
+    help: "&6/hug &8- &fGives somebody a nice warm hug!"
+    particle: null
+    sound: null
+  kiss:
+    sender: "&7You give &6%target%&7 a kiss. &cAwww ❤"
+    target: "&6%sender% &7gives you a kiss. &cAwww ❤"
+    global: "&6%sender%&7 gives &6%target%&7 a kiss. &cAww ❤"
+    help: "&6/kiss &8- &fGives a player a squishy kiss!"
+    particle: null
+    sound: null
+  lick:
+    sender: "&7You lick &6%target% &7like icecream... &3Gross!"
+    target: "&6%sender% &7licks you like icecream... &3Gross!"
+    global: "&6%sender%&7 licks &6%target%&7 like icecream... &3Gross!"
+    help: "&6/lick &8- &fLick someone like an icecream sundae."
+    particle: null
+    sound: null
+  love:
+    sender: "&7You send &6%target% &7lots of love. &c❤"
+    target: "&6%sender% &7sends you lots of love. &c❤"
+    global: "&6%sender%&7 sends &6%target%&7 lots of love. &c❤"
+    help: "&6/love &8- &fGives someone lots of love!"
+    particle: null
+    sound: null
+  murder:
+    sender: "&7You murder &6%target%&7. Bandaid anyone?"
+    target: "&6%sender% &7just murdered you. Bandaid anyone?"
+    global: "&6%sender%&7 just murdered &6%target%&7. Bandaid anyone?"
+    help: "&6/murder &8- &fMurders a player, Muhaha!"
+    particle: null
+    sound: null
+  pat:
+    sender: "&7You gently pat &6%target%&7's head for being good."
+    target: "&6%sender% &7gently pats your head for being good."
+    global: "&6%sender%&7 gently pats &6%target%&7's head for being good."
+    help: "&6/pat &8- &fPat someone on the head!"
+    particle: null
+    sound: null
+  poke:
+    sender: "&7You poke &6%target% &7... Maybe they're on vacation?"
+    target: "&6%sender% &7has poked you! Anyone there?"
+    global: "&6%sender%&7 poked &6%target%&7... Maybe they're on vacation?"
+    help: "&6/poke &8- &fPoke someone to get their attention!"
+    particle: null
+    sound: null
+  punch:
+    sender: "&7You strike &6%target% &7with a punch, Ouch!"
+    target: "&6%sender% &7strikes you with a punch, Ouch!"
+    global: "&6%sender%&7 strikes &6%target%&7 with a punch, Ouch!"
+    help: "&6/punch &8- &fPunches a player, ouch!"
+    particle: null
+    sound: null
+  scorn:
+    sender: "&7You scorn &6%target% &7for what they've done."
+    target: "&6%sender% &7scorns you for what you have done."
+    global: "&6%sender%&7 scorns &6%target%&7 for what they have done."
+    help: "&6/scorn &8- &fScorn someone to show your disapproval."
+    particle: null
+    sound: null
+  shake:
+    sender: "&7You harlem shake &6%target%  &7's entire body."
+    target: "&6%sender% &7harlem shakes your entire body."
+    global: "&6%sender%&7 harlem shakes &6%target%&7's entire body."
+    help: "&6/shake &8- &fShakes a player to their feet."
+    particle: null
+    sound: null
+  shoes:
+    sender: "&7You yell to &6%target%&7, WHAT ARE THOOOOOSE?"
+    target: "&6%sender% &7yells to you, WHAT ARE THOOOOOSE?"
+    global: "&6%sender%&7 yells to &6%target%&7, WHAT ARE THOOOOOSE?"
+    help: "&6/shoes  &8- &fWhat 'r those!?!?"
+    particle: null
+    sound: null
+  sing:
+    sender: "&7You serenade &6%target% &7with your beautiful voice."
+    target: "&6%sender% &7serenades you with their beautiful voice."
+    global: "&6%sender%&7 serenades &6%target%&7 with their beautiful voice."
+    help: "&6/sing &8- &fSing to the world!"
+    particle: null
+    sound: null
+  slap:
+    sender: "&7You slap &6%target% &7with some Spaghetti."
+    target: "&6%sender% &7slaps you with some Spahgetti."
+    global: "&6%sender%&7 slaps &6%target%&7 with some Spahgetti."
+    help: "&6/slap &8- &f Gives someone a piece of yuor mind!"
+    particle: null
+    sound: null
+  sleep:
+    sender: "&7You fall asleep infront of &6%target%&7. Zzzzzzz."
+    target: "&6%sender% &7falls asleep infront of you. Zzzzzzz."
+    global: "&6%sender%&7 falls asleep infront of &6%target%&7. Zzzzzzz."
+    help: "&6/sleep &8- &fZzzzzzzzzzzzzz"
+    particle: null
+    sound: null
+  snuggle:
+    sender: "&7You snuggle &6%target% &7with love. &cAwww ❤"
+    target: "&6%sender% &7snuggles you with love. &cAwww ❤"
+    global: "&6%sender%&7 snuggles &6%target%&7 with love. &cAwww ❤"
+    help: "&6/snuggle &8- &fSnuggles a player with hugs."
+    particle: null
+    sound: null
+  spell:
+    sender: "&7You cast a spell on &6%target%&7."
+    target: "&6%sender% &7casts a spell on you."
+    global: "&6%sender%&7 casts a spell on &6%target%&7."
+    help: "&6/spell &8- &fCast a magical spell on someone!"
+    particle: null
+    sound: null
+  stab:
+    sender: "&7You stab &6%target% &7with a knife. Got bandaids?"
+    target: "&6%sender% &7stabs you with a knife. Got bandaids?"
+    global: "&6%sender%&7 stabs &6%target%&7 with a knife. Got bandaids?"
+    help: "&6/stab &8- &fStabs a player, need a bandaid?"
+    particle: null
+    sound: null
+  stalk:
+    sender: "&7You watch &6%target% &7from afar. O-O"
+    target: "&6%sender% &7watches you from afar. O-O"
+    global: "&6%sender%&7 watches &6%target%&7 from afar. O-O"
+    help: "&6/stalk &8- &fStare at a player O-O"
+    particle: null
+    sound: null
+  wave:
+    sender: "&7You wave to &6%target%&7. Hi!"
+    target: "&6%sender% &7waves to you. Hi!"
+    global: "&6%sender%&7 waves to &6%target%&7. Hi!"
+    help: "&6/wave &8- &fWave at a player."
+    particle: null
+    sound: null
+  whisper:
+    sender: "&7You whisper in &6%target%&7's ear."
+    target: "&6%sender% &7whispers in your ear."
+    global: "&6%sender%&7 whispers in &6%target%&7's ear."
+    help: "&6/whisper &8- &fWhisper into someone's ear."
+    particle: null
+    sound: null
+  wink:
+    sender: "&7You wink at &6%target% &7. ;)"
+    target: "&6%sender% &7winks at you. ;)"
+    global: "&6%sender%&7 winks at &6%target%&7. ;)"
+    help: "&6/wink &8- &f Wink at a player ;)"
+    particle: null
+    sound: null
+  yell:
+    sender: "&7You yell loudly at &6%target% &7for no reason."
+    target: "&6%sender% &7yells loudly at you from the top of their lungs."
+    global: "&6%sender%&7 yells loudly at &6%target%&7 from the top of their lungs."
+    help: "&6/yell &8- &f Yells at a player, inside voices please."
+    particle: null
+    sound: null
 
-bite:
-  sender: "&7You sink your teeth into &6%target%&7's skin."
-  target: "&6%sender% &7sinks their teeth into your skin."
-  global: "&6%sender% &7sinks their teeth into &6%target%&7's skin."
-
-blush:
-  sender: "&7Your face turns bright pink in front of &6%target%&7. &ccx"
-  target: "&6%sender%&7's face turns bright pink in front of you. &ccx"
-  global: "&6%sender%&7's face turns bring pink in front of &6%target%&7. &ccx"
-
-boi:
-  sender: "&7You inhale to &6%target%&7... &eBOI"
-  target: "&6%target% &7inhales to you... &eBOI"
-  global: "&6%sender%&7 inhales to &6%target%&7... &eBOI"
-
-cringe:
-  sender: "&7You cringe at &6%target%&7's actions."
-  target: "&6%sender% &7cringes at your actions."
-  global: "&6%sender%&7 cringes at &6%target%&7's actions,"
-
-cry:
-  sender: "&7You shed a tear towards &6%target%"
-  target: "&6%sender% &7sheds a tear towards you."
-  global: "&6%sender%&7 sheds a tear towards &6%starget%&7."
-
-dab:
-  sender: "&7You freshly dab on &6%target%&7... Nailed it."
-  target: "&6%sender% &7freshly dabs on you... Nailed it."
-  global: "&6%sender%&7 freshly dabs on &6%target%&7... Nailed it."
-
-fight:
-  sender: "&7You get ready to fight &6%target%&7."
-  target: "&6%sender% &7gets ready to fight you."
-  global: "&6%sender%&7 gets ready to fight &6%target%&7."
-
-hide:
-  sender: "&7You duck behind a rock to hide from &6%target%&7."
-  target: "&6%sender% &7ducks behind a rock to hide from you."
-  global: "&6%sender%&7 ducks behind a rock to hide from &6%target%&7."
-
-highfive:
-  sender: "&7You give a mighty highfive to &6%target%&7."
-  target: "&6%sender% &7gives you a mighty highfive."
-  global: "&6%sender%&7 gives &6%target%&7 a mighty highfive."
-
-hug:
-  sender: "&7You give &6%target% &7a warm hug. &cAwww ❤"
-  target: "&6%sender% &7gives you a warm hug. &cAwww ❤"
-  global: "&6%sender%&7 gives &6%target%&7 a warm hug. &cAwww ❤"
-
-kiss:
-  sender: "&7You give &6%target%&7 a kiss. &cAwww ❤"
-  target: "&6%sender% &7gives you a kiss. &cAwww ❤"
-  global: "&6%sender%&7 gives &6%target%&7 a kiss. &cAww ❤"
-
-lick:
-  sender: "&7You lick &6%target% &7like icecream... &3Gross!"
-  target: "&6%sender% &7licks you like icecream... &3Gross!"
-  global: "&6%sender%&7 licks &6%target%&7 like icecream... &3Gross!"
-
-love:
-  sender: "&7You send &6%target% &7lots of love. &c❤"
-  target: "&6%sender% &7sends you lots of love. &c❤"
-  global: "&6%sender%&7 sends &6%target%&7 lots of love. &c❤"
-
-murder:
-  sender: "&7You murder &6%target%&7. Bandaid anyone?"
-  target: "&6%sender% &7just murdered you. Bandaid anyone?"
-  global: "&6%sender%&7 just murdered &6%target%&7. Bandaid anyone?"
-
-pat:
-  sender: "&7You gently pat &6%target%&7's head for being good."
-  target: "&6%sender% &7gently pats your head for being good."
-  global: "&6%sender%&7 gently pats &6%target%&7's head for being good."
-
-poke:
-  sender: "&7You poke &6%target% &7... Maybe they're on vacation?"
-  target: "&6%sender% &7has poked you! Anyone there?"
-  global: "&6%sender%&7 poked &6%target%&7... Maybe they're on vacation?"
-
-punch:
-  sender: "&7You strike &6%target% &7with a punch, Ouch!"
-  target: "&6%sender% &7strikes you with a punch, Ouch!"
-  global: "&6%sender%&7 strikes &6%target%&7 with a punch, Ouch!"
-
-scorn:
-  sender: "&7You scorn &6%target% &7for what they've done."
-  target: "&6%sender% &7scorns you for what you have done."
-  global: "&6%sender%&7 scorns &6%target%&7 for what they have done."
-
-shake:
-  sender: "&7You harlem shake &6%target%  &7's entire body."
-  target: "&6%sender% &7harlem shakes your entire body."
-  global: "&6%sender%&7 harlem shakes &6%target%&7's entire body."
-
-shoes:
-  sender: "&7You yell to &6%target%&7, WHAT ARE THOOOOOSE?"
-  target: "&6%sender% &7yells to you, WHAT ARE THOOOOOSE?"
-  global: "&6%sender%&7 yells to &6%target%&7, WHAT ARE THOOOOOSE?"
-
-sing:
-  sender: "&7You serenade &6%target% &7with your beautiful voice."
-  target: "&6%sender% &7serenades you with their beautiful voice."
-  global: "&6%sender%&7 serenades &6%target%&7 with their beautiful voice."
-
-slap:
-  sender: "&7You slap &6%target% &7with some Spaghetti."
-  target: "&6%sender% &7slaps you with some Spahgetti."
-  global: "&6%sender%&7 slaps &6%target%&7 with some Spahgetti."
-
-sleep:
-  sender: "&7You fall asleep infront of &6%target%&7. Zzzzzzz."
-  target: "&6%sender% &7falls asleep infront of you. Zzzzzzz."
-  global: "&6%sender%&7 falls asleep infront of &6%target%&7. Zzzzzzz."
-
-snuggle:
-  sender: "&7You snuggle &6%target% &7with love. &cAwww ❤"
-  target: "&6%sender% &7snuggles you with love. &cAwww ❤"
-  global: "&6%sender%&7 snuggles &6%target%&7 with love. &cAwww ❤"
-
-spell:
-  sender: "&7You cast a spell on &6%target%&7."
-  target: "&6%sender% &7casts a spell on you."
-  global: "&6%sender%&7 casts a spell on &6%target%&7."
-
-stab:
-  sender: "&7You stab &6%target% &7with a knife. Got bandaids?"
-  target: "&6%sender% &7stabs you with a knife. Got bandaids?"
-  global: "&6%sender%&7 stabs &6%target%&7 with a knife. Got bandaids?"
-
-stalk:
-  sender: "&7You watch &6%target% &7from afar. O-O"
-  target: "&6%sender% &7watches you from afar. O-O"
-  global: "&6%sender%&7 watches &6%target%&7 from afar. O-O"
-
-wave:
-  sender: "&7You wave to &6%target%&7. Hi!"
-  target: "&6%sender% &7waves to you. Hi!"
-  global: "&6%sender%&7 waves to &6%target%&7. Hi!"
-
-whisper:
-  sender: "&7You whisper in &6%target%&7's ear."
-  target: "&6%sender% &7whispers in your ear."
-  global: "&6%sender%&7 whispers in &6%target%&7's ear."
-
-wink:
-  sender: "&7You wink at &6%target% &7. ;)"
-  target: "&6%sender% &7winks at you. ;)"
-  global: "&6%sender%&7 winks at &6%target%&7. ;)"
-
-yell:
-  sender: "&7You yell loudly at &6%target% &7for no reason."
-  target: "&6%sender% &7yells loudly at you from the top of their lungs."
-  global: "&6%sender%&7 yells loudly at &6%target%&7 from the top of their lungs."
 
 #------------------------------------------------
-# Feelings Chat Messages-------------------------
+# Feelings --------------------------------------
 #------------------------------------------------
 
   #Placeholders
 # %sender% - shows the senders username
 # %s-display% - shows the senders display name
-
-afraid: "&6%sender% &7is feeling afraid."
-
-angry: "&6%sender% &7is feeling angry."
-
-annoyed: "&6%sender% &7is feeling annoyed."
-
-bored: "&6%sender% &7is feeling bored."
-
-calm: "&6%sender% &7is feeling calm."
-
-confused: "&6%sender% &7is feeling confused."
-
-crazy: "&6%sender% &7is feeling crazy."
-
-excited: "&6%sender% &7is feeling excited."
-
-guilty: "&6%sender% &7is feeling guilty."
-
-happy: "&6%sender% &7is feeling happy."
-
-jealous: "&6%sender% &7is feeling jealous."
-
-jolly: "&6%sender% &7is feeling jolly."
-
-lonely: "&6%sender% &7is feeling lonely."
-
-loved: "&6%sender% &7is feeling loved."
-
-nervous: "&6%sender% &7is feeling nervous."
-
-sad: "&6%sender% &7is feeling sad."
-
-scared: "&6%sender% &7is feeling scared."
-
-shy: "&6%sender% &7is feeling shy."
-
-worried: "&6%sender% &7is feeling worried."
+Feelings:
+  afraid:
+    message: "&6%sender% &7is feeling afraid."
+    help: "&6/afraid &8- &fTell everyone you are feeling afraid"
+    particle: null
+    sound: null
+  angry:
+    message: "&6%sender% &7is feeling angry."
+    help: "&6/angry &8- &fTell everyone you are feeling angry"
+    particle: null
+    sound: null
+  annoyed:
+    message: "&6%sender% &7is feeling annoyed."
+    help: "&6/annoyed &8- &fTell everyone you are feeling annoyed"
+    particle: null
+    sound: null
+  bored:
+    message: "&6%sender% &7is feeling bored."
+    help: "&6/bored &8- &fTell everyone you are feeling bored"
+    particle: null
+    sound: null
+  calm:
+    message: "&6%sender% &7is feeling calm."
+    help: "&6/calm &8- &fTell everyone you are feeling calm"
+    particle: null
+    sound: null
+  confused:
+    message: "&6%sender% &7is feeling confused."
+    help: "&6/confused &8- &fTell everyone you are feeling confused"
+    particle: null
+    sound: null
+  crazy:
+    message: "&6%sender% &7is feeling crazy."
+    help: "&6/crazy &8- &fTell everyone you are feeling crazy"
+    particle: null
+    sound: null
+  excited:
+    message: "&6%sender% &7is feeling excited."
+    help: "&6/excited &8- &fTell everyone you are feeling excited"
+    particle: null
+    sound: null
+  guilty:
+    message: "&6%sender% &7is feeling guilty."
+    help: "&6/guilty &8- &fTell everyone you are feeling jealous"
+    particle: null
+    sound: null
+  happy:
+    message: "&6%sender% &7is feeling happy."
+    help: "&6/happy &8- &fTell everyone you are feeling happy"
+    particle: null
+    sound: null
+  jealous:
+    message: "&6%sender% &7is feeling jealous."
+    help: "&6/jealous &8- &fTell everyone you are feeling jealous"
+    particle: null
+    sound: null
+  jolly:
+    message: "&6%sender% &7is feeling jolly."
+    help: "&6/jolly &8- &fTell everyone you are feeling Jolly"
+    particle: null
+    sound: null
+  lonely:
+    message: "&6%sender% &7is feeling lonely."
+    help: "&6/lonely &8- &fTell everyone you are feeling lonely"
+    particle: null
+    sound: null
+  loved:
+    message: "&6%sender% &7is feeling loved."
+    help:
+    particle: null
+    sound: null
+  nervous:
+    message: "&6%sender% &7is feeling nervous."
+    help: "&6/nervous &8- &fTell everyone you are feeling nervous"
+    particle: null
+    sound: null
+  sad:
+    message: "&6%sender% &7is feeling sad."
+    help: "&6/sad &8- &fTell everyone you are feeling sad"
+    particle: null
+    sound: null
+  scared:
+    message: "&6%sender% &7is feeling scared."
+    help: "&6/scared &8- &fTell everyone you are feeling shy"
+    particle: null
+    sound: null
+  shy:
+    message: "&6%sender% &7is feeling shy."
+    help: "&6/shy &8- &fTell everyone you are feelng shy"
+    particle: null
+    sound: null
+  worried:
+    message: "&6%sender% &7is feeling worried."
+    help: "&6/worried &8- &fTell everyone you are feeling worried"
+    particle: null
+    sound: null
