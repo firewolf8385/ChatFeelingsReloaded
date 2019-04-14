@@ -35,7 +35,7 @@ public class Actions implements CommandExecutor
             {
                 Player target = Bukkit.getPlayer(args[0]);
                 String prefix = settings.getConfig().getString("Action-Prefix");
-                
+
                 if(target != null)
                 {
                     if(sender == target)
@@ -47,9 +47,9 @@ public class Actions implements CommandExecutor
                         {
                             String message = settings.getConfig().getString(label + ".global")
                                     .replace("%sender%", sender.getName())
-                                    .replace("%s-display%", sender.getName())
+                                    .replace("%s-display%", ((Player) sender).getDisplayName())
                                     .replace("%target%", target.getName())
-                                    .replace("%t-dispalay%", target.getDisplayName());
+                                    .replace("%t-display%", target.getDisplayName());
 
                             Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', prefix + message));
                         }
@@ -58,16 +58,16 @@ public class Actions implements CommandExecutor
                             String sMessage = settings.getConfig().getString(label + ".sender");
                             String sMessage2 = sMessage
                                     .replace("%sender%", sender.getName())
-                                    .replace("%s-display%", sender.getName())
+                                    .replace("%s-display%", ((Player) sender).getDisplayName())
                                     .replace("%target%", target.getName())
-                                    .replace("%t-dispalay%", target.getDisplayName());
+                                    .replace("%t-display%", target.getDisplayName());
 
                             String tMessage = settings.getConfig().getString(label + ".target");
                             String tMessage2 = tMessage
                                     .replace("%sender%", sender.getName())
-                                    .replace("%s-display%", sender.getName())
+                                    .replace("%s-display%", ((Player) sender).getDisplayName())
                                     .replace("%target%", target.getName())
-                                    .replace("%t-dispalay%", target.getDisplayName());
+                                    .replace("%t-display%", target.getDisplayName());
 
                             utils.sendChat(p, prefix + sMessage2);
                             utils.sendChat(target, prefix + tMessage2);
@@ -82,9 +82,9 @@ public class Actions implements CommandExecutor
                             String tMessage = settings.getConfig().getString(label + ".target");
                             String tMessage2 = tMessage
                                     .replace("%sender%", sender.getName())
-                                    .replace("%s-display%", sender.getName())
+                                    .replace("%s-display%", ((Player) sender).getDisplayName())
                                     .replace("%target%", player.getName())
-                                    .replace("%t-dispalay%", player.getDisplayName());
+                                    .replace("%t-display%", player.getDisplayName());
 
                             if(!(player.getName().equals(sender.getName())))
                             {
@@ -94,9 +94,9 @@ public class Actions implements CommandExecutor
                         String sMessage = settings.getConfig().getString(label + ".sender");
                         String sMessage2 = sMessage
                                 .replace("%sender%", sender.getName())
-                                .replace("%s-display%", sender.getName())
+                                .replace("%s-display%", ((Player) sender).getDisplayName())
                                 .replace("%target%", "everyone")
-                                .replace("%t-dispalay%", "everyone");
+                                .replace("%t-display%", "everyone");
 
                         utils.sendChat(p, prefix + sMessage2);
                     }
