@@ -389,3 +389,102 @@ Actions:
     range: -1
     requires-target: true
     permission: "cfr.use.yell"
+
+# Placeholders
+# %sender% - shows the senders username
+# %s-display% - shows the senders display name
+Feelings:
+  afraid:
+    help: "&6/afraid &8- &fTell everyone you are feeling afraid"
+    message: "&6%sender% &7is feeling afraid."
+    range: -1
+
+  angry:
+    help: "&6/angry &8- &fTell everyone you are feeling angry"
+    message: "&6%sender% &7is feeling angry."
+    range: -1
+
+  annoyed:
+    help: "&6/annoyed &8- &fTell everyone you are feeling annoyed"
+    message: "&6%sender% &7is feeling annoyed."
+    range: -1
+
+  bored:
+    help: "&6/bored &8- &fTell everyone you are feeling bored"
+    message: "&6%sender% &7is feeling bored."
+    range: -1
+
+  calm:
+    help: "&6/calm &8- &fTell everyone you are feeling calm"
+    message: "&6%sender% &7is feeling calm."
+    range: -1
+
+  confused:
+    help: "&6/confused &8- &fTell everyone you are feeling confused"
+    message: "&6%sender% &7is feeling confused."
+    range: -1
+
+  crazy:
+    help: "&6/crazy &8- &fTell everyone you are feeling crazy"
+    message: "&6%sender% &7is feeling crazy."
+    range: -1
+
+  excited:
+    help: "&6/excited &8- &fTell everyone you are feeling excited"
+    message: "&6%sender% &7is feeling excited."
+    range: -1
+
+  guilty:
+    help: "&6/guilty &8- &fTell everyone you are feeling jealous"
+    message: "&6%sender% &7is feeling guilty."
+    range: -1
+
+  happy:
+    help: "&6/happy &8- &fTell everyone you are feeling happy"
+    message: "&6%sender% &7is feeling happy."
+    range: -1
+
+  jealous:
+    help: "&6/jealous &8- &fTell everyone you are feeling jealous"
+    message: "&6%sender% &7is feeling jealous."
+    range: -1
+
+  jolly:
+    help: "&6/jolly &8- &fTell everyone you are feeling Jolly"
+    message: "&6%sender% &7is feeling jolly."
+    range: -1
+
+  lonely:
+    help: "&6/lonely &8- &fTell everyone you are feeling lonely"
+    message: "&6%sender% &7is feeling lonely."
+    range: -1
+
+  loved:
+    help: "&6/loved &8- &fTell everyone you are feeling loved"
+    message: "&6%sender% &7is feeling loved."
+    range: -1
+
+  nervous:
+    help: "&6/nervous &8- &fTell everyone you are feeling nervous"
+    message: "&6%sender% &7is feeling nervous."
+    range: -1
+
+  sad:
+    help: "&6/sad &8- &fTell everyone you are feeling sad"
+    message: "&6%sender% &7is feeling sad."
+    range: -1
+
+  scared:
+    help: "&6%sender% &7is feeling scared."
+    message: "&6/scared &8- &fTell everyone you are feeling shy"
+    range: -1
+
+  shy:
+    help: "&6/shy &8- &fTell everyone you are feelng shy"
+    message: "&6%sender% &7is feeling shy."
+    range: -1
+
+  worried:
+    help: "&6/worried &8- &fTell everyone you are feeling worried"
+    message: "&6%sender% &7is feeling worried."
+    range: -1
