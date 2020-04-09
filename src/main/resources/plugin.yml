@@ -1,0 +1,12 @@
+main: org.firewolf83885.chatfeelingsreloaded.ChatFeelingsReloaded
+
+name: ChatFeelingsReloaded
+version: 3.0
+api-version: 1.15
+author: firewolf8385
+
+commands:
+  chatfeelingsreloaded:
+    usage: /<command>
+    description: Main plugin command.
+    aliases: [chatfeelings, cf, cfr]
