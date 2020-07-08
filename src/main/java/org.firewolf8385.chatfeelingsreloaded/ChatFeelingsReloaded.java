@@ -22,6 +22,10 @@ public class ChatFeelingsReloaded extends JavaPlugin
         // Get server version.
         String version = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
         subVersion = Integer.parseInt(version.replace("1_", "").replaceAll("_R\\d", "").replace("v", ""));
+
+        // Plugin Metrics
+        int pluginId = 5060;
+        MetricsLite metrics = new MetricsLite(this, pluginId);
     }
 
     /**
