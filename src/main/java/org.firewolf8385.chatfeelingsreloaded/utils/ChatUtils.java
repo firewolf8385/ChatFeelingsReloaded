@@ -1,12 +1,15 @@
 package org.firewolf8385.chatfeelingsreloaded.utils;
 
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.firewolf8385.chatfeelingsreloaded.ChatFeelingsReloaded;
 import org.firewolf8385.chatfeelingsreloaded.enums.DefaultFontInfo;
 
-public class ChatUtils
-{
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ChatUtils {
     private final static int CENTER_PX = 154;
 
     /**
@@ -14,9 +17,8 @@ public class ChatUtils
      * @param p Player
      * @param message Message to be sent.
      */
-    public static void chat(Player p, String message)
-    {
-        p.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+    public static void chat(Player p, String message) {
+        p.sendMessage(translate(message));
     }
 
     /**
@@ -24,9 +26,8 @@ public class ChatUtils
      * @param sender Command Sender
      * @param message Message to be sent.
      */
-    public static void chat(CommandSender sender, String message)
-    {
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+    public static void chat(CommandSender sender, String message) {
+        sender.sendMessage(translate(message));
     }
 
     /**
@@ -34,9 +35,8 @@ public class ChatUtils
      * @param player Player
      * @param message nessage
      */
-    public static void centeredChat(Player player, String message)
-    {
-        message = StringUtils.translate(message);
+    public static void centeredChat(Player player, String message) {
+        message = translate(message);
 
         if(message == null || message.equals("")) player.sendMessage("");
         message = ChatColor.translateAlternateColorCodes('&', message);
@@ -45,25 +45,20 @@ public class ChatUtils
         boolean previousCode = false;
         boolean isBold = false;
 
-        for(char c : message.toCharArray())
-        {
-            if(c == '§')
-            {
+        for(char c : message.toCharArray()) {
+            if(c == '§') {
                 previousCode = true;
                 continue;
             }
-            else if(previousCode == true)
-            {
+            else if(previousCode == true) {
                 previousCode = false;
-                if(c == 'l' || c == 'L')
-                {
+                if(c == 'l' || c == 'L') {
                     isBold = true;
                     continue;
                 }
                 else isBold = false;
             }
-            else
-            {
+            else {
                 DefaultFontInfo dFI = DefaultFontInfo.getDefaultFontInfo(c);
                 messagePxSize += isBold ? dFI.getBoldLength() : dFI.getLength();
                 messagePxSize++;
@@ -75,8 +70,7 @@ public class ChatUtils
         int spaceLength = DefaultFontInfo.SPACE.getLength() + 1;
         int compensated = 0;
         StringBuilder sb = new StringBuilder();
-        while(compensated < toCompensate)
-        {
+        while(compensated < toCompensate) {
             sb.append(" ");
             compensated += spaceLength;
         }
@@ -88,9 +82,8 @@ public class ChatUtils
      * @param sender Command Sender
      * @param message Message
      */
-    public static void centeredChat(CommandSender sender, String message)
-    {
-        message = StringUtils.translate(message);
+    public static void centeredChat(CommandSender sender, String message) {
+        message = translate(message);
 
         if(message == null || message.equals("")) sender.sendMessage("");
         message = ChatColor.translateAlternateColorCodes('&', message);
@@ -99,25 +92,20 @@ public class ChatUtils
         boolean previousCode = false;
         boolean isBold = false;
 
-        for(char c : message.toCharArray())
-        {
-            if(c == '§')
-            {
+        for(char c : message.toCharArray()) {
+            if(c == '§') {
                 previousCode = true;
                 continue;
             }
-            else if(previousCode == true)
-            {
+            else if(previousCode == true) {
                 previousCode = false;
-                if(c == 'l' || c == 'L')
-                {
+                if(c == 'l' || c == 'L') {
                     isBold = true;
                     continue;
                 }
                 else isBold = false;
             }
-            else
-            {
+            else {
                 DefaultFontInfo dFI = DefaultFontInfo.getDefaultFontInfo(c);
                 messagePxSize += isBold ? dFI.getBoldLength() : dFI.getLength();
                 messagePxSize++;
@@ -129,12 +117,41 @@ public class ChatUtils
         int spaceLength = DefaultFontInfo.SPACE.getLength() + 1;
         int compensated = 0;
         StringBuilder sb = new StringBuilder();
-        while(compensated < toCompensate)
-        {
+        while(compensated < toCompensate) {
             sb.append(" ");
             compensated += spaceLength;
         }
         sender.sendMessage(sb.toString() + message);
     }
 
+    /**
+     * Translate a String to a colorful String.
+     * @param message Message to translate.
+     * @return Translated Message.
+     */
+    public static String translate(String message) {
+        if(ChatFeelingsReloaded.getServerVersion() >= 16) {
+            final Pattern pattern = Pattern.compile("#<(.{6})>", Pattern.DOTALL);
+            final Matcher matcher = pattern.matcher(message);
+
+            while (matcher.find()) {
+                message = message.replace("#<" + matcher.group(1) + '>', ChatColor.of('#' + matcher.group(1)).toString());
+            }
+        }
+
+        return ChatColor.translateAlternateColorCodes('&', message);
+    }
+
+    /**
+     * Translate an array of strings.
+     * @param arr Strings
+     * @return array of translated strings.
+     */
+    public static String[] translate(String[] arr) {
+        for(int i = 0; i < arr.length; i++) {
+            arr[i] = translate(arr[i]);
+        }
+
+        return arr;
+    }
 }
