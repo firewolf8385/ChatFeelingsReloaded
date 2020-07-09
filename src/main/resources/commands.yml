@@ -6,7 +6,7 @@
 #  \_____|_| |_|\__,_|\__|_|  \___|\___|_|_|_| |_|\__, |___/
 #                                                  __/ |
 #                                                 |___/
-#          ___     _              _        _
+#           ___     _              _        _
 #          | _ \___| |___  __ _ __| |___ __| |
 #          |   / -_) / _ \/ _` / _` / -_) _` |
 #          |_|_\___|_\___/\__,_\__,_\___\__,_|
@@ -241,7 +241,7 @@ Actions:
       sender: "&7You harlem shake &6%target%  &7's entire body."
       target: "&6%sender% &7harlem shakes your entire body."
       global: "&6%sender%&7 harlem shakes &6%target%&7's entire body."
-      global-no-target: ""
+      global-no-target: "&6%sender%&7 harlem shakes the entire world."
     range: -1
     requires-target: true
     permission: "cfr.use.shake"
