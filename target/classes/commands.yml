@@ -1,0 +1,490 @@
+#   _____ _           _   ______        _ _
+#  / ____| |         | | |  ____|      | (_)
+# | |    | |__   __ _| |_| |__ ___  ___| |_ _ __   __ _ ___
+# | |    | '_ \ / _` | __|  __/ _ \/ _ \ | | '_ \ / _` / __|
+# | |____| | | | (_| | |_| | |  __/  __/ | | | | | (_| \__ \
+#  \_____|_| |_|\__,_|\__|_|  \___|\___|_|_|_| |_|\__, |___/
+#                                                  __/ |
+#                                                 |___/
+#          ___     _              _        _
+#          | _ \___| |___  __ _ __| |___ __| |
+#          |   / -_) / _ \/ _` / _` / -_) _` |
+#          |_|_\___|_\___/\__,_\__,_\___\__,_|
+
+
+# Placeholders
+# %sender% - shows the senders username
+# %s-display% - shows the senders display name
+# %target% - shows the target's
+# %t-display% - show the targets display name
+Actions:
+  bite:
+    usage: "&6&lUsage &8- &c/bite [player]"
+    help: "&6/bite &8- &fBites a player, OUCH!"
+    messages:
+      sender: "&7You sink your teeth into &6%target%&7's skin."
+      target: "&6%sender% &7sinks their teeth into your skin."
+      global: "&6%sender% &7sinks their teeth into &6%target%&7's skin."
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.bite"
+
+  blush:
+    usage: "&6&lUsage &8- &c/blush [player]"
+    help: "&6/blush &8- &fTurns your face red, how embarrassing!"
+    messages:
+      sender: "&7Your face turns bright pink in front of &6%target%&7. &ccx"
+      target: "&6%sender%&7's face turns bright pink in front of you. &ccx"
+      global: "&6%sender%&7's face turns bright pink in front of &6%target%&7. &ccx"
+      global-no-target: "&6%sender%&7's face turns bright pink. &ccx"
+    range: -1
+    requires-target: false
+    permission: "cfr.use.blush"
+
+  boi:
+    usage: "&6&lUsage &8- &c/boi [player]"
+    help: "&6/boi &8- &fHere comes dat boi!"
+    messages:
+      sender: "&7You inhale to &6%target%&7... &eBOI"
+      target: "&6%target% &7inhales to you... &eBOI"
+      global: "&6%sender%&7 inhales to &6%target%&7... &eBOI"
+      global-no-target: "&6%sender%&7 inhales deeply... &eBOI"
+    range: -1
+    requires-target: false
+    permission: "cfr.use.boi"
+
+  cringe:
+    usage: "&6&lUsage &8- &c/cringe [player]"
+    help: "&6/cringe &8- &fCringe at those who deserve it"
+    messages:
+      sender: "&7You cringe at &6%target%&7's actions."
+      target: "&6%sender% &7cringes at your actions."
+      global: "&6%sender%&7 cringes at &6%target%&7's actions."
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.cringe"
+
+  cry:
+    usage: "&6&lUsage &8- &c/cry [player]"
+    help: "&6/cry &8- &fCry at a player, how sad."
+    messages:
+      sender: "&7You shed a tear towards &6%target%"
+      target: "&6%sender% &7sheds a tear towards you."
+      global: "&6%sender%&7 sheds a tear towards &6%starget%&7."
+      global-no-target: "&6%sender%&7 sheds a tear."
+    range: -1
+    requires-target: false
+    permission: "cfr.use.cry"
+
+  dab:
+    usage: "&6&lUsage &8- &c/dab [player]"
+    help: "&6/dab &8- &fDab on them haters."
+    messages:
+      sender: "&7You freshly dab on &6%target%&7... Nailed it."
+      target: "&6%sender% &7freshly dabs on you... Nailed it."
+      global: "&6%sender%&7 freshly dabs on &6%target%&7... Nailed it."
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.dab"
+
+  fight:
+    usage: "&6Usage &8- &c/fight [player]"
+    help: "&6/fight &8- &fPrepare yourself for a fight"
+    messages:
+      sender: "&7You get ready to fight &6%target%&7."
+      target: "&6%sender% &7gets ready to fight you."
+      global: "&6%sender%&7 gets ready to fight &6%target%&7."
+      global-no-target: "&6%sender%&7 gets ready to fight."
+    range: -1
+    requires-target: false
+    permission: "cfr.use.fight"
+
+  hide:
+    usage: "&6Usage &8- &c/hide [player]"
+    help: "&6/hide &8- &fDuck behind a rock"
+    messages:
+      sender: "&7You duck behind a rock to hide from &6%target%&7."
+      target: "&6%sender% &7ducks behind a rock to hide from you."
+      global: "&6%sender%&7 ducks behind a rock to hide from &6%target%&7."
+      global-no-target: "&6%sender%&7 ducks behind a rock."
+    range: -1
+    requires-target: false
+    permission: "cfr.use.hide"
+
+  highfive:
+    usage: "&6Usage &8- &c/highfive [player]"
+    help: "&6/highfive &8- &fShows your support and highfives a player!"
+    messages:
+      sender: "&7You give a mighty highfive to &6%target%&7."
+      target: "&6%sender% &7gives you a mighty highfive."
+      global: "&6%sender%&7 gives &6%target%&7 a mighty highfive."
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.highfive"
+
+  hug:
+    usage: "&6Usage &8- &c/hug [player]"
+    help: "&6/hug &8- &fGives somebody a nice warm hug!"
+    messages:
+      sender: "&7You give &6%target% &7a warm hug. &cAwww ❤"
+      target: "&6%sender% &7gives you a warm hug. &cAwww ❤"
+      global: "&6%sender%&7 gives &6%target%&7 a warm hug. &cAwww ❤"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.hug"
+
+  kiss:
+    usage: "&6Usage &8- &c/kiss [player]"
+    help: "&6/kiss &8- &fGives a player a squishy kiss!"
+    messages:
+      sender: "&7You give &6%target%&7 a kiss. &cAwww ❤"
+      target: "&6%sender% &7gives you a kiss. &cAwww ❤"
+      global: "&6%sender%&7 gives &6%target%&7 a kiss. &cAww ❤"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.kiss"
+
+  lick:
+    usage: "&6Usage &8- &c/lick [player]"
+    help: "&6/lick &8- &fLick someone like an icecream sundae."
+    messages:
+      sender: "&7You lick &6%target% &7like icecream... &3Gross!"
+      target: "&6%sender% &7licks you like icecream... &3Gross!"
+      global: "&6%sender%&7 licks &6%target%&7 like icecream... &3Gross!"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.lick"
+
+  love:
+    usage: "&6Usage &8- &c/love [player]"
+    help: "&6/love &8- &fGives someone lots of love!"
+    message:
+      sender: "&7You send &6%target% &7lots of love. &c❤"
+      target: "&6%sender% &7sends you lots of love. &c❤"
+      global: "&6%sender%&7 sends &6%target%&7 lots of love. &c❤"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.love"
+
+  murder:
+    usage: "&6Usage &8- &c/murder [player]"
+    help: "&6/murder &8- &fMurders a player, Muhaha!"
+    message:
+      sender: "&7You murder &6%target%&7. Bandaid anyone?"
+      target: "&6%sender% &7just murdered you. Bandaid anyone?"
+      global: "&6%sender%&7 just murdered &6%target%&7. Bandaid anyone?"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.murder"
+
+  pat:
+    usage: "&6Usage &8- &c/pat [player]"
+    help: "&6/pat &8- &fPat someone on the head!"
+    messages:
+      sender: "&7You gently pat &6%target%&7's head for being good."
+      target: "&6%sender% &7gently pats your head for being good."
+      global: "&6%sender%&7 gently pats &6%target%&7's head for being good."
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.pat"
+
+  poke:
+    usage: "&6Usage &8- &c/poke [player]"
+    help: "&6/poke &8- &fPoke someone to get their attention!"
+    messages:
+      sender: "&7You poke &6%target% &7... Maybe they're on vacation?"
+      target: "&6%sender% &7has poked you! Anyone there?"
+      global: "&6%sender%&7 poked &6%target%&7... Maybe they're on vacation?"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.poke"
+
+  punch:
+    usage: "&6Usage &8- &c/punch [player]"
+    help: "&6/punch &8- &fPunches a player, ouch!"
+    messages:
+      sender: "&7You strike &6%target% &7with a punch, Ouch!"
+      target: "&6%sender% &7strikes you with a punch, Ouch!"
+      global: "&6%sender%&7 strikes &6%target%&7 with a punch, Ouch!"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.punch"
+
+  scorn:
+    usage: "&6Usage &8- &c/scorn [player]"
+    help: "&6/scorn &8- &fScorn someone to show your disapproval."
+    messages:
+      sender: "&7You scorn &6%target% &7for what they've done."
+      target: "&6%sender% &7scorns you for what you have done."
+      global: "&6%sender%&7 scorns &6%target%&7 for what they have done."
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.scorn"
+
+  shake:
+    usage: "&6Usage &8- &c/shake [player]"
+    help: "&6/shake &8- &fShakes a player to their feet."
+    messages:
+      sender: "&7You harlem shake &6%target%  &7's entire body."
+      target: "&6%sender% &7harlem shakes your entire body."
+      global: "&6%sender%&7 harlem shakes &6%target%&7's entire body."
+      global-no-target: "&6%sender%&7 harlem shakes the entire world."
+    range: -1
+    requires-target: true
+    permission: "cfr.use.shake"
+
+  shoes:
+    usage: "&6Usage &8- &c/shoes [player]"
+    help: "&6/shoes  &8- &fWhat 'r those!?!?"
+    messages:
+      sender: "&7You yell to &6%target%&7, WHAT ARE THOOOOOSE?"
+      target: "&6%sender% &7yells to you, WHAT ARE THOOOOOSE?"
+      global: "&6%sender%&7 yells to &6%target%&7, WHAT ARE THOOOOOSE?"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.shoes"
+
+  sing:
+    usage: "&6Usage &8- &c/sing [player]"
+    help: "&6/sing &8- &fSing to the world!"
+    message:
+      sender: "&7You serenade &6%target% &7with your beautiful voice."
+      target: "&6%sender% &7serenades you with their beautiful voice."
+      global: "&6%sender%&7 serenades &6%target%&7 with their beautiful voice."
+      global-no-target: "&6%sender%&7 serenades the world with their beautiful voice."
+    range: -1
+    requires-target: false
+    permission: "cfr.use.sing"
+
+  slap:
+    usage: "&6Usage &8- &c/slap [player]"
+    help: "&6/slap &8- &f Gives someone a piece of your mind!"
+    messages:
+      sender: "&7You slap &6%target% &7with some Spaghetti."
+      target: "&6%sender% &7slaps you with some Spahgetti."
+      global: "&6%sender%&7 slaps &6%target%&7 with some Spahgetti."
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.slap"
+
+  sleep:
+    usage: "&6Usage &8- &c/sleep [player]"
+    help: "&6/sleep &8- &fZzzzzzzzzzzzzz"
+    messages:
+      sender: "&7You fall asleep infront of &6%target%&7. Zzzzzzz."
+      target: "&6%sender% &7falls asleep infront of you. Zzzzzzz."
+      global: "&6%sender%&7 falls asleep infront of &6%target%&7. Zzzzzzz."
+      global-no-target: "&6%sender%&7 falls asleep. Zzzzzzz."
+    range: -1
+    requires-target: false
+    permission: "cfr.use.sleep"
+
+  snuggle:
+    usage: "&6Usage &8- &c/snuggle [player]"
+    help: "&6/snuggle &8- &fSnuggles a player with hugs."
+    messages:
+      sender: "&7You snuggle &6%target% &7with love. &cAwww ❤"
+      target: "&6%sender% &7snuggles you with love. &cAwww ❤"
+      global: "&6%sender%&7 snuggles &6%target%&7 with love. &cAwww ❤"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.snuggle"
+
+  spell:
+    usage: "&6Usage &8- &c/spell [player]"
+    help: "&6/spell &8- &fCast a magical spell on someone!"
+    messages:
+      sender: "&7You cast a spell on &6%target%&7."
+      target: "&6%sender% &7casts a spell on you."
+      global: "&6%sender%&7 casts a spell on &6%target%&7."
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.spell"
+
+  stab:
+    usage: "&6Usage &8- &c/stab [player]"
+    help: "&6/stab &8- &fStabs a player, need a bandaid?"
+    messages:
+      sender: "&7You stab &6%target% &7with a knife. Got bandaids?"
+      target: "&6%sender% &7stabs you with a knife. Got bandaids?"
+      global: "&6%sender%&7 stabs &6%target%&7 with a knife. Got bandaids?"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.stab"
+
+  stalk:
+    usage: "&6Usage &8- &c/stalk [player]"
+    help: "&6/stalk &8- &fStare at a player O-O"
+    messages:
+      sender: "&7You watch &6%target% &7from afar. O-O"
+      target: "&6%sender% &7watches you from afar. O-O"
+      global: "&6%sender%&7 watches &6%target%&7 from afar. O-O"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.stalk"
+
+  wave:
+    usage: "&6Usage &8- &c/wave [player]"
+    help: "&6/wave &8- &fWave at a player."
+    messages:
+      sender: "&7You wave to &6%target%&7. Hi!"
+      target: "&6%sender% &7waves to you. Hi!"
+      global: "&6%sender%&7 waves to &6%target%&7. Hi!"
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.wave"
+
+  whisper:
+    usage: "&6Usage &8- &c/whisper [player]"
+    help: "&6/whisper &8- &fWhisper into someone's ear."
+    messages:
+      sender: "&7You whisper in &6%target%&7's ear."
+      target: "&6%sender% &7whispers in your ear."
+      global: "&6%sender%&7 whispers in &6%target%&7's ear."
+      global-no-target: ""
+    range: -1
+    requires-target: true
+    permission: "cfr.use.whisper"
+
+  wink:
+    usage: "&6Usage &8- &c/wink [player]"
+    help: "&6/wink &8- &f Wink at a player ;)"
+    messages:
+      sender: "&7You wink at &6%target% &7. ;)"
+      target: "&6%sender% &7winks at you. ;)"
+      global: "&6%sender%&7 winks at &6%target%&7. ;)"
+      global-no-target: "&6%sender% &7winks. ;)"
+    range: -1
+    requires-target: true
+    permission: "cfr.use.wink"
+
+  yell:
+    usage: "&6Usage &8- &c/yell [player]"
+    help: "&6/yell &8- &f Yells at a player, inside voices please."
+    messages:
+      sender: "&7You yell loudly at &6%target% &7for no reason."
+      target: "&6%sender% &7yells loudly at you from the top of their lungs."
+      global: "&6%sender%&7 yells loudly at &6%target%&7 from the top of their lungs."
+      global-no-target: "&6%sender% &7yells loudly from the top of their lungs."
+    range: -1
+    requires-target: true
+    permission: "cfr.use.yell"
+
+# Placeholders
+# %sender% - shows the senders username
+# %s-display% - shows the senders display name
+Feelings:
+  afraid:
+    help: "&6/afraid &8- &fTell everyone you are feeling afraid"
+    message: "&6%sender% &7is feeling afraid."
+    range: -1
+
+  angry:
+    help: "&6/angry &8- &fTell everyone you are feeling angry"
+    message: "&6%sender% &7is feeling angry."
+    range: -1
+
+  annoyed:
+    help: "&6/annoyed &8- &fTell everyone you are feeling annoyed"
+    message: "&6%sender% &7is feeling annoyed."
+    range: -1
+
+  bored:
+    help: "&6/bored &8- &fTell everyone you are feeling bored"
+    message: "&6%sender% &7is feeling bored."
+    range: -1
+
+  calm:
+    help: "&6/calm &8- &fTell everyone you are feeling calm"
+    message: "&6%sender% &7is feeling calm."
+    range: -1
+
+  confused:
+    help: "&6/confused &8- &fTell everyone you are feeling confused"
+    message: "&6%sender% &7is feeling confused."
+    range: -1
+
+  crazy:
+    help: "&6/crazy &8- &fTell everyone you are feeling crazy"
+    message: "&6%sender% &7is feeling crazy."
+    range: -1
+
+  excited:
+    help: "&6/excited &8- &fTell everyone you are feeling excited"
+    message: "&6%sender% &7is feeling excited."
+    range: -1
+
+  guilty:
+    help: "&6/guilty &8- &fTell everyone you are feeling jealous"
+    message: "&6%sender% &7is feeling guilty."
+    range: -1
+
+  happy:
+    help: "&6/happy &8- &fTell everyone you are feeling happy"
+    message: "&6%sender% &7is feeling happy."
+    range: -1
+
+  jealous:
+    help: "&6/jealous &8- &fTell everyone you are feeling jealous"
+    message: "&6%sender% &7is feeling jealous."
+    range: -1
+
+  jolly:
+    help: "&6/jolly &8- &fTell everyone you are feeling Jolly"
+    message: "&6%sender% &7is feeling jolly."
+    range: -1
+
+  lonely:
+    help: "&6/lonely &8- &fTell everyone you are feeling lonely"
+    message: "&6%sender% &7is feeling lonely."
+    range: -1
+
+  loved:
+    help: "&6/loved &8- &fTell everyone you are feeling loved"
+    message: "&6%sender% &7is feeling loved."
+    range: -1
+
+  nervous:
+    help: "&6/nervous &8- &fTell everyone you are feeling nervous"
+    message: "&6%sender% &7is feeling nervous."
+    range: -1
+
+  sad:
+    help: "&6/sad &8- &fTell everyone you are feeling sad"
+    message: "&6%sender% &7is feeling sad."
+    range: -1
+
+  scared:
+    help: "&6%sender% &7is feeling scared."
+    message: "&6/scared &8- &fTell everyone you are feeling shy"
+    range: -1
+
+  shy:
+    help: "&6/shy &8- &fTell everyone you are feelng shy"
+    message: "&6%sender% &7is feeling shy."
+    range: -1
+
+  worried:
+    help: "&6/worried &8- &fTell everyone you are feeling worried"
+    message: "&6%sender% &7is feeling worried."
+    range: -1
